@@ -1,14 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Little Something ♡</title>
+
 <style>
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
 }
 
 html {
     width: 100%;
+    min-height: 100%;
 }
 
 body {
@@ -20,60 +29,68 @@ body {
     justify-content: center;
     align-items: center;
 
-    /* MORE SPACE AROUND THE CARD */
-    padding: 22px 16px;
+    padding:
+        max(18px, env(safe-area-inset-top))
+        max(18px, env(safe-area-inset-right))
+        max(18px, env(safe-area-inset-bottom))
+        max(18px, env(safe-area-inset-left));
 
     font-family: "Segoe UI", Arial, sans-serif;
 
     color: #4b3543;
 
     background:
-        radial-gradient(circle at 5% 5%, #ffdbe9 0%, transparent 30%),
-        radial-gradient(circle at 95% 10%, #e6dcff 0%, transparent 30%),
-        radial-gradient(circle at 50% 100%, #ffeadc 0%, transparent 35%),
-        #fff9fc;
+        radial-gradient(circle at 10% 10%, #ffd6e7 0%, transparent 35%),
+        radial-gradient(circle at 90% 15%, #e4d8ff 0%, transparent 35%),
+        radial-gradient(circle at 50% 100%, #ffe9d6 0%, transparent 40%),
+        #fff8fb;
 
     overflow-x: hidden;
 }
 
 
 /* =====================================================
-   BACKGROUND HEARTS
+   FLOATING HEARTS
 ===================================================== */
 
 .background-heart {
     position: fixed;
-    color: rgba(226, 117, 157, 0.10);
+
+    color: rgba(226, 117, 157, 0.13);
+
     pointer-events: none;
+
     user-select: none;
+
     z-index: 0;
+
     animation: floatHeart 7s ease-in-out infinite;
 }
 
 .heart1 {
     top: 8%;
-    left: 5%;
-    font-size: 25px;
+    left: 6%;
+    font-size: 34px;
 }
 
 .heart2 {
-    bottom: 12%;
-    left: 4%;
-    font-size: 19px;
+    bottom: 14%;
+    left: 5%;
+    font-size: 25px;
     animation-delay: 2s;
 }
 
 .heart3 {
-    top: 12%;
-    right: 5%;
-    font-size: 21px;
+    top: 13%;
+    right: 6%;
+    font-size: 28px;
     animation-delay: 1s;
 }
 
 .heart4 {
-    bottom: 8%;
-    right: 5%;
-    font-size: 27px;
+    bottom: 9%;
+    right: 7%;
+    font-size: 38px;
     animation-delay: 3s;
 }
 
@@ -84,64 +101,65 @@ body {
     }
 
     50% {
-        transform: translateY(-8px) rotate(5deg);
+        transform: translateY(-12px) rotate(7deg);
     }
+
 }
 
 
 /* =====================================================
-   CARD
+   MAIN CARD
 ===================================================== */
 
 .card {
 
-    /* INTENTIONALLY SMALLER */
-    width: min(92%, 390px);
+    width: min(100%, 460px);
 
-    max-height: calc(100dvh - 44px);
+    max-height: calc(100dvh - 36px);
 
     overflow-y: auto;
     overflow-x: hidden;
 
-    /* SMALLER INTERNAL SPACING */
-    padding: 27px 23px;
+    padding: 38px 32px;
 
     background: rgba(255, 255, 255, 0.80);
 
-    border: 1px solid rgba(255,255,255,0.9);
+    border: 1px solid rgba(255, 255, 255, 0.90);
 
-    border-radius: 25px;
+    border-radius: 30px;
 
     box-shadow:
-        0 18px 48px rgba(170,110,140,0.14),
-        0 5px 16px rgba(170,110,140,0.06);
+        0 25px 70px rgba(170, 110, 140, 0.18),
+        0 8px 25px rgba(170, 110, 140, 0.08);
 
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 
     position: relative;
+
     z-index: 2;
 
-    scrollbar-width: none;
+    animation: cardAppear 0.6s ease;
 
-    animation: appear 0.55s ease;
+    scrollbar-width: none;
 }
 
 .card::-webkit-scrollbar {
     display: none;
 }
 
-@keyframes appear {
+@keyframes cardAppear {
 
     from {
         opacity: 0;
-        transform: translateY(12px);
+        transform: translateY(18px) scale(0.98);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
+
 }
 
 
@@ -151,10 +169,10 @@ body {
 
 .logo {
 
-    width: 55px;
-    height: 55px;
+    width: 70px;
+    height: 70px;
 
-    margin: 0 auto 14px;
+    margin: 0 auto 20px;
 
     display: flex;
     justify-content: center;
@@ -165,16 +183,16 @@ body {
     background:
         linear-gradient(
             135deg,
-            #f5aac5,
-            #c8b5f4
+            #f7a8c4,
+            #c9b4f7
         );
 
     color: white;
 
-    font-size: 22px;
+    font-size: 28px;
 
     box-shadow:
-        0 8px 18px rgba(210,130,165,0.20);
+        0 12px 28px rgba(210, 130, 165, 0.28);
 }
 
 h1 {
@@ -183,14 +201,13 @@ h1 {
 
     font-family: Georgia, "Times New Roman", serif;
 
-    /* SMALLER */
-    font-size: 25px;
+    font-size: clamp(27px, 7vw, 31px);
 
     font-weight: 500;
 
     color: #543b49;
 
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .subtitle {
@@ -199,12 +216,11 @@ h1 {
 
     color: #9b7d8c;
 
-    /* SMALLER */
-    font-size: 12px;
+    font-size: 14px;
 
-    line-height: 1.45;
+    line-height: 1.5;
 
-    margin-bottom: 21px;
+    margin-bottom: 29px;
 }
 
 
@@ -213,16 +229,16 @@ h1 {
 ===================================================== */
 
 .input-group {
-    margin-bottom: 14px;
+    margin-bottom: 20px;
 }
 
 label {
 
     display: block;
 
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 
-    font-size: 11px;
+    font-size: 13px;
 
     font-weight: 600;
 
@@ -233,23 +249,23 @@ input {
 
     width: 100%;
 
-    /* SMALLER */
-    min-height: 44px;
+    min-height: 52px;
 
-    padding: 10px 13px;
+    padding: 14px 16px;
 
-    border-radius: 12px;
+    border-radius: 14px;
 
     border: 1px solid #efd9e3;
 
-    background: rgba(255,255,255,0.8);
+    background: rgba(255, 255, 255, 0.80);
 
     color: #4b3543;
 
-    /* SMALLER */
-    font-size: 14px;
+    font-size: 16px;
 
     outline: none;
+
+    transition: 0.2s;
 }
 
 input::placeholder {
@@ -263,7 +279,7 @@ input:focus {
     background: white;
 
     box-shadow:
-        0 0 0 3px rgba(231,157,188,0.11);
+        0 0 0 4px rgba(231, 157, 188, 0.13);
 }
 
 
@@ -276,43 +292,47 @@ input:focus {
 }
 
 .password-wrapper input {
-    padding-right: 45px;
+    padding-right: 55px;
 }
 
 .show-password {
 
     position: absolute;
 
-    right: 4px;
+    right: 8px;
     top: 50%;
 
     transform: translateY(-50%);
 
-    width: 36px;
-    height: 36px;
+    width: 42px;
+    height: 42px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border: none;
-
     background: transparent;
+
+    border: none;
 
     color: #b38d9e;
 
-    font-size: 15px;
+    cursor: pointer;
+
+    font-size: 17px;
 }
 
 .hint {
 
     display: none;
 
-    margin-top: 6px;
+    margin-top: 9px;
 
-    font-size: 10px;
+    font-size: 12px;
 
     color: #b06d8e;
+
+    line-height: 1.4;
 }
 
 .hint.show {
@@ -321,11 +341,13 @@ input:focus {
 
 
 /* =====================================================
-   BUTTONS
+   GENERAL BUTTONS
 ===================================================== */
 
 button {
+
     font-family: inherit;
+
     touch-action: manipulation;
 }
 
@@ -334,14 +356,13 @@ button {
 
     width: 100%;
 
-    /* SMALLER */
-    min-height: 44px;
+    min-height: 52px;
 
-    padding: 10px 15px;
+    padding: 14px 18px;
 
     border: none;
 
-    border-radius: 12px;
+    border-radius: 15px;
 
     background:
         linear-gradient(
@@ -352,19 +373,27 @@ button {
 
     color: white;
 
-    /* SMALLER */
-    font-size: 13px;
+    font-size: 15px;
 
     font-weight: 600;
+
+    letter-spacing: 0.2px;
 
     cursor: pointer;
 
     box-shadow:
-        0 7px 17px rgba(204,132,166,0.20);
+        0 10px 25px rgba(204, 132, 166, 0.25);
+
+    transition: transform 0.2s ease;
 }
 
 .login-btn {
-    margin-top: 3px;
+    margin-top: 5px;
+}
+
+.login-btn:active,
+.proceed-btn:active {
+    transform: scale(0.98);
 }
 
 
@@ -374,17 +403,23 @@ button {
 
 .message {
 
-    min-height: 16px;
+    min-height: 20px;
 
-    margin-top: 10px;
+    margin-top: 14px;
 
     text-align: center;
 
-    font-size: 11px;
+    font-size: 13px;
+
+    line-height: 1.4;
 }
 
 .error {
     color: #d66b83;
+}
+
+.success {
+    color: #69a98c;
 }
 
 
@@ -392,17 +427,11 @@ button {
    DATE PAGE
 ===================================================== */
 
-.date-page,
-.reason-page,
-.warning-page,
-.details-page {
+.date-page {
     display: none;
 }
 
-.date-page.active,
-.reason-page.active,
-.warning-page.active,
-.details-page.active {
+.date-page.active {
     display: block;
 }
 
@@ -410,23 +439,23 @@ button {
 
     text-align: center;
 
-    /* SMALLER */
-    font-size: 42px;
+    font-size: clamp(45px, 13vw, 58px);
 
-    margin-bottom: 7px;
+    margin-bottom: 12px;
 
     animation: heartbeat 1.5s infinite;
 }
 
 @keyframes heartbeat {
 
-    0%,100% {
+    0%, 100% {
         transform: scale(1);
     }
 
     50% {
-        transform: scale(1.07);
+        transform: scale(1.10);
     }
+
 }
 
 .date-title {
@@ -435,50 +464,48 @@ button {
 
     font-family: Georgia, "Times New Roman", serif;
 
-    /* SMALLER */
-    font-size: 25px;
+    font-size: clamp(27px, 7vw, 31px);
 
     font-weight: 500;
 
     color: #543b49;
 
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .date-question {
 
     text-align: center;
 
-    /* SMALLER */
-    font-size: 14px;
+    font-size: clamp(16px, 4.5vw, 18px);
 
-    line-height: 1.45;
+    line-height: 1.55;
 
     color: #704f60;
 
-    margin-bottom: 19px;
+    margin-bottom: 26px;
 }
 
 
 /* =====================================================
-   YES / NO
+   YES / NO AREA
 ===================================================== */
 
 .date-buttons {
 
+    position: relative;
+
     width: 100%;
 
-    height: 53px;
-
-    position: relative;
+    height: 65px;
 
     display: flex;
 
-    align-items: center;
-
     justify-content: center;
 
-    gap: 10px;
+    align-items: center;
+
+    gap: 14px;
 
     overflow: hidden;
 }
@@ -486,21 +513,18 @@ button {
 .yes-btn,
 .no-btn {
 
-    min-height: 42px;
+    min-height: 50px;
 
-    padding: 9px 19px;
+    padding: 13px 24px;
 
     border-radius: 50px;
 
-    /* SMALLER */
-    font-size: 13px;
+    font-size: 15px;
 
     white-space: nowrap;
 }
 
 .yes-btn {
-
-    border: none;
 
     background:
         linear-gradient(
@@ -512,14 +536,14 @@ button {
     color: white;
 
     box-shadow:
-        0 6px 15px rgba(210,120,160,0.20);
+        0 8px 20px rgba(210, 120, 160, 0.25);
+}
+
+.yes-btn:active {
+    transform: scale(0.96);
 }
 
 .no-btn {
-
-    position: absolute;
-
-    left: calc(50% + 5px);
 
     background: white;
 
@@ -527,23 +551,38 @@ button {
 
     color: #8b6878;
 
+    position: absolute;
+
+    left: calc(50% + 8px);
+
+    transform: translateX(0);
+
     transition:
         left 0.18s ease,
-        top 0.18s ease;
+        top 0.18s ease,
+        transform 0.18s ease;
 }
 
 
 /* =====================================================
-   REASON
+   REASON PAGE
 ===================================================== */
+
+.reason-page {
+    display: none;
+}
+
+.reason-page.active {
+    display: block;
+}
 
 .reason-icon {
 
     text-align: center;
 
-    font-size: 38px;
+    font-size: 48px;
 
-    margin-bottom: 7px;
+    margin-bottom: 13px;
 }
 
 .reason-title {
@@ -552,11 +591,11 @@ button {
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 23px;
+    font-size: clamp(25px, 7vw, 29px);
 
     color: #543b49;
 
-    margin-bottom: 7px;
+    margin-bottom: 10px;
 }
 
 .reason-text {
@@ -565,24 +604,24 @@ button {
 
     color: #9b7d8c;
 
-    font-size: 11px;
+    font-size: 14px;
 
-    line-height: 1.5;
+    line-height: 1.55;
 
-    margin-bottom: 14px;
+    margin-bottom: 20px;
 }
 
 .reason-box {
 
     width: 100%;
 
-    min-height: 100px;
-
-    padding: 11px;
+    min-height: 125px;
 
     resize: vertical;
 
-    border-radius: 12px;
+    padding: 14px;
+
+    border-radius: 15px;
 
     border: 1px solid #efd9e3;
 
@@ -592,13 +631,21 @@ button {
 
     font-family: inherit;
 
-    font-size: 14px;
+    font-size: 16px;
 
     outline: none;
 }
 
+.reason-box:focus {
+
+    border-color: #e3a1bc;
+
+    box-shadow:
+        0 0 0 4px rgba(231,157,188,0.13);
+}
+
 .proceed-btn {
-    margin-top: 10px;
+    margin-top: 14px;
 }
 
 
@@ -606,13 +653,21 @@ button {
    WARNING
 ===================================================== */
 
+.warning-page {
+    display: none;
+}
+
+.warning-page.active {
+    display: block;
+}
+
 .warning-icon {
 
     text-align: center;
 
-    font-size: 43px;
+    font-size: 52px;
 
-    margin-bottom: 8px;
+    margin-bottom: 13px;
 }
 
 .warning-title {
@@ -621,20 +676,20 @@ button {
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 25px;
+    font-size: clamp(27px, 7vw, 31px);
 
     color: #543b49;
 
-    margin-bottom: 11px;
+    margin-bottom: 15px;
 }
 
 .warning-message {
 
     text-align: center;
 
-    font-size: 13px;
+    font-size: 16px;
 
-    line-height: 1.55;
+    line-height: 1.65;
 
     color: #704f60;
 }
@@ -644,13 +699,21 @@ button {
    DETAILS
 ===================================================== */
 
+.details-page {
+    display: none;
+}
+
+.details-page.active {
+    display: block;
+}
+
 .details-icon {
 
     text-align: center;
 
-    font-size: 43px;
+    font-size: 52px;
 
-    margin-bottom: 6px;
+    margin-bottom: 10px;
 }
 
 .details-title {
@@ -659,11 +722,11 @@ button {
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 25px;
+    font-size: clamp(27px, 7vw, 31px);
 
     color: #543b49;
 
-    margin-bottom: 14px;
+    margin-bottom: 20px;
 }
 
 .details-card {
@@ -672,9 +735,9 @@ button {
 
     border: 1px solid #f0dce5;
 
-    border-radius: 14px;
+    border-radius: 18px;
 
-    padding: 4px 13px;
+    padding: 8px 17px;
 }
 
 .detail-row {
@@ -683,9 +746,9 @@ button {
 
     align-items: center;
 
-    gap: 9px;
+    gap: 12px;
 
-    padding: 10px 0;
+    padding: 14px 0;
 
     border-bottom: 1px solid #f3e5eb;
 }
@@ -696,13 +759,13 @@ button {
 
 .detail-emoji {
 
-    width: 23px;
+    font-size: 20px;
+
+    width: 27px;
 
     flex-shrink: 0;
 
     text-align: center;
-
-    font-size: 17px;
 }
 
 .detail-content {
@@ -712,22 +775,22 @@ button {
 
 .detail-label {
 
-    font-size: 8px;
+    font-size: 10px;
 
     text-transform: uppercase;
 
-    letter-spacing: 0.8px;
+    letter-spacing: 1px;
 
     color: #b08b9d;
 
-    margin-bottom: 2px;
+    margin-bottom: 3px;
 }
 
 .detail-value {
 
-    font-size: 12px;
+    font-size: 14px;
 
-    line-height: 1.3;
+    line-height: 1.4;
 
     font-weight: 600;
 
@@ -743,67 +806,109 @@ button {
 
 .footer {
 
-    margin-top: 16px;
+    margin-top: 24px;
 
     text-align: center;
 
     color: #c19eae;
 
-    font-size: 8px;
+    font-size: 10px;
 
-    letter-spacing: 0.3px;
+    letter-spacing: 0.5px;
 }
 
 
 /* =====================================================
-   EXTRA SMALL PHONES
+   SMALL PHONES
 ===================================================== */
 
-@media (max-width: 360px) {
+@media (max-width: 380px) {
 
     body {
-        padding: 18px 12px;
+        padding: 12px;
     }
 
     .card {
 
-        width: 94%;
+        padding: 28px 20px;
 
-        padding: 24px 19px;
+        border-radius: 24px;
 
-        border-radius: 22px;
+        max-height: calc(100dvh - 24px);
     }
 
-    h1 {
-        font-size: 23px;
+    .logo {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 16px;
     }
 
-    .date-title {
-        font-size: 23px;
+    .subtitle {
+        margin-bottom: 24px;
     }
 
-    .date-question {
-        font-size: 13px;
+    .input-group {
+        margin-bottom: 17px;
+    }
+
+    .date-buttons {
+        gap: 8px;
+    }
+
+    .yes-btn,
+    .no-btn {
+        padding-left: 19px;
+        padding-right: 19px;
+        font-size: 14px;
     }
 
 }
 
 
 /* =====================================================
-   SHORT PHONES
+   VERY SHORT SCREENS
 ===================================================== */
 
 @media (max-height: 650px) {
 
     body {
         align-items: flex-start;
-
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 12px;
+        padding-bottom: 12px;
     }
 
     .card {
-        max-height: calc(100dvh - 20px);
+        max-height: calc(100dvh - 24px);
+    }
+
+    .logo {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 12px;
+    }
+
+    .subtitle {
+        margin-bottom: 20px;
+    }
+
+}
+
+
+/* =====================================================
+   DESKTOP HOVER
+===================================================== */
+
+@media (hover: hover) {
+
+    .login-btn:hover,
+    .proceed-btn:hover {
+
+        transform: translateY(-2px);
+    }
+
+    .yes-btn:hover {
+
+        transform: translateY(-2px) scale(1.02);
     }
 
 }
