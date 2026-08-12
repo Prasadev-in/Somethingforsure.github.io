@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,6 +18,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
             font-family: Arial, Helvetica, sans-serif;
 
             background:
@@ -28,16 +30,20 @@
             padding: 20px;
         }
 
-        /* ===== LOGIN CARD ===== */
+        /* =========================
+           LOGIN CARD
+        ========================= */
 
         .login-card {
             width: 100%;
             max-width: 420px;
 
             background: rgba(20, 23, 38, 0.88);
+
             border: 1px solid rgba(255, 255, 255, 0.1);
 
             border-radius: 24px;
+
             padding: 40px 32px;
 
             box-shadow:
@@ -47,7 +53,9 @@
             backdrop-filter: blur(15px);
         }
 
-        /* ===== HEADER ===== */
+        /* =========================
+           LOGO
+        ========================= */
 
         .logo {
             width: 64px;
@@ -70,23 +78,35 @@
             font-size: 28px;
             font-weight: 800;
 
-            box-shadow: 0 10px 30px rgba(124, 92, 255, 0.3);
+            box-shadow:
+                0 10px 30px rgba(124, 92, 255, 0.3);
         }
+
+        /* =========================
+           HEADING
+        ========================= */
 
         h1 {
             text-align: center;
+
             font-size: 28px;
+
             margin-bottom: 8px;
         }
 
         .subtitle {
             text-align: center;
+
             color: #9da2b8;
+
             font-size: 14px;
+
             margin-bottom: 32px;
         }
 
-        /* ===== INPUT GROUP ===== */
+        /* =========================
+           INPUT GROUP
+        ========================= */
 
         .input-group {
             margin-bottom: 22px;
@@ -94,9 +114,13 @@
 
         label {
             display: block;
+
             font-size: 14px;
+
             font-weight: 600;
+
             color: #dfe2f0;
+
             margin-bottom: 9px;
         }
 
@@ -110,9 +134,11 @@
             padding: 14px 15px;
 
             border-radius: 12px;
+
             border: 1px solid #30354d;
 
             background: #111421;
+
             color: white;
 
             font-size: 15px;
@@ -133,7 +159,9 @@
                 0 0 0 3px rgba(124, 92, 255, 0.12);
         }
 
-        /* ===== PASSWORD ===== */
+        /* =========================
+           PASSWORD
+        ========================= */
 
         #password {
             padding-right: 48px;
@@ -148,11 +176,13 @@
             transform: translateY(-50%);
 
             background: none;
+
             border: none;
 
             color: #858ba3;
 
             cursor: pointer;
+
             font-size: 16px;
 
             padding: 4px;
@@ -162,12 +192,15 @@
             color: white;
         }
 
-        /* ===== HINT ===== */
+        /* =========================
+           PASSWORD HINT
+        ========================= */
 
         .hint {
             margin-top: 9px;
 
             font-size: 12px;
+
             color: #9f8cff;
 
             display: none;
@@ -180,6 +213,7 @@
         }
 
         @keyframes fadeIn {
+
             from {
                 opacity: 0;
                 transform: translateY(-3px);
@@ -189,9 +223,12 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+
         }
 
-        /* ===== LOGIN BUTTON ===== */
+        /* =========================
+           LOGIN BUTTON
+        ========================= */
 
         .login-btn {
             width: 100%;
@@ -201,6 +238,7 @@
             padding: 14px;
 
             border: none;
+
             border-radius: 12px;
 
             background: linear-gradient(
@@ -212,6 +250,7 @@
             color: white;
 
             font-size: 15px;
+
             font-weight: 700;
 
             cursor: pointer;
@@ -233,7 +272,9 @@
             transform: translateY(0);
         }
 
-        /* ===== MESSAGE ===== */
+        /* =========================
+           MESSAGE
+        ========================= */
 
         .message {
             text-align: center;
@@ -253,7 +294,9 @@
             color: #63e6be;
         }
 
-        /* ===== FOOTER ===== */
+        /* =========================
+           FOOTER
+        ========================= */
 
         .footer {
             text-align: center;
@@ -265,12 +308,15 @@
             font-size: 11px;
         }
 
-        /* ===== MOBILE ===== */
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 480px) {
 
             .login-card {
                 padding: 34px 24px;
+
                 border-radius: 20px;
             }
 
@@ -282,11 +328,16 @@
                 width: 58px;
                 height: 58px;
             }
+
         }
     </style>
 </head>
 
 <body>
+
+    <!-- =========================
+         LOGIN CARD
+    ========================= -->
 
     <div class="login-card">
 
@@ -295,13 +346,18 @@
             P
         </div>
 
+        <!-- TITLE -->
         <h1>Welcome</h1>
 
         <p class="subtitle">
             Enter your details to continue
         </p>
 
-        <!-- USERNAME -->
+
+        <!-- =========================
+             USERNAME
+        ========================= -->
+
         <div class="input-group">
 
             <label for="username">
@@ -318,7 +374,10 @@
         </div>
 
 
-        <!-- PASSWORD -->
+        <!-- =========================
+             PASSWORD
+        ========================= -->
+
         <div class="input-group">
 
             <label for="password">
@@ -330,7 +389,7 @@
                 <input
                     type="password"
                     id="password"
-                    placeholder="Enter password"
+                    placeholder="DD/MM"
                 >
 
                 <button
@@ -344,7 +403,9 @@
 
             </div>
 
+
             <!-- HINT -->
+
             <div id="hint" class="hint">
                 💡 Hint: It's Prasad's birthdate.
             </div>
@@ -352,7 +413,10 @@
         </div>
 
 
-        <!-- LOGIN -->
+        <!-- =========================
+             LOGIN BUTTON
+        ========================= -->
+
         <button
             class="login-btn"
             onclick="login()"
@@ -361,9 +425,17 @@
         </button>
 
 
-        <!-- MESSAGE -->
-        <div id="message" class="message"></div>
+        <!-- =========================
+             MESSAGE
+        ========================= -->
 
+        <div
+            id="message"
+            class="message"
+        ></div>
+
+
+        <!-- FOOTER -->
 
         <div class="footer">
             Project 3
@@ -378,18 +450,29 @@
            SHOW HINT WHEN USERNAME IS ENTERED
         ========================================= */
 
-        const usernameInput = document.getElementById("username");
-        const hint = document.getElementById("hint");
+        const usernameInput =
+            document.getElementById("username");
 
-        usernameInput.addEventListener("input", function () {
+        const hint =
+            document.getElementById("hint");
 
-            if (this.value.trim().length > 0) {
-                hint.classList.add("visible");
-            } else {
-                hint.classList.remove("visible");
+
+        usernameInput.addEventListener(
+            "input",
+            function () {
+
+                if (this.value.trim().length > 0) {
+
+                    hint.classList.add("visible");
+
+                } else {
+
+                    hint.classList.remove("visible");
+
+                }
+
             }
-
-        });
+        );
 
 
         /* =========================================
@@ -404,14 +487,17 @@
             const button =
                 document.querySelector(".show-password");
 
+
             if (passwordInput.type === "password") {
 
                 passwordInput.type = "text";
+
                 button.textContent = "🙈";
 
             } else {
 
                 passwordInput.type = "password";
+
                 button.textContent = "👁";
 
             }
@@ -420,22 +506,28 @@
 
 
         /* =========================================
-           LOGIN
+           LOGIN FUNCTION
         ========================================= */
 
         function login() {
 
             const username =
-                document.getElementById("username").value.trim();
+                document.getElementById("username")
+                .value
+                .trim();
 
             const password =
-                document.getElementById("password").value.trim();
+                document.getElementById("password")
+                .value
+                .trim();
 
             const message =
                 document.getElementById("message");
 
 
-            /* Check username */
+            /* =========================
+               USERNAME CHECK
+            ========================= */
 
             if (username === "") {
 
@@ -449,7 +541,9 @@
             }
 
 
-            /* Check password */
+            /* =========================
+               PASSWORD CHECK
+            ========================= */
 
             if (password === "") {
 
@@ -463,7 +557,9 @@
             }
 
 
-            /* Correct password */
+            /* =========================
+               CORRECT PASSWORD
+            ========================= */
 
             if (password === "14/03") {
 
@@ -473,9 +569,10 @@
                 message.className =
                     "message success";
 
+
                 /*
-                    Later we will replace this section
-                    with the next page/interface.
+                    NEXT PART OF PROJECT 3
+                    WILL BE ADDED HERE.
                 */
 
             } else {
