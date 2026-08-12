@@ -1,592 +1,437 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Project 3 · Login</title>
+<title>Project 3 - Login</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        body {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 
-            font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
 
-            background:
-                radial-gradient(circle at top left, #252b55 0%, transparent 35%),
-                radial-gradient(circle at bottom right, #401f4f 0%, transparent 35%),
-                #090b14;
+    background:
+        radial-gradient(circle at top left, #292f5c, transparent 35%),
+        radial-gradient(circle at bottom right, #492052, transparent 35%),
+        #090b14;
 
-            color: white;
-            padding: 20px;
-        }
+    color: white;
+}
 
-        /* =========================
-           LOGIN CARD
-        ========================= */
+.login-card {
+    width: 100%;
+    max-width: 420px;
 
-        .login-card {
-            width: 100%;
-            max-width: 420px;
+    padding: 40px 32px;
 
-            background: rgba(20, 23, 38, 0.88);
+    background: rgba(20, 23, 38, 0.95);
 
-            border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255,255,255,0.1);
 
-            border-radius: 24px;
+    border-radius: 24px;
 
-            padding: 40px 32px;
+    box-shadow: 0 25px 70px rgba(0,0,0,0.5);
+}
 
-            box-shadow:
-                0 25px 70px rgba(0, 0, 0, 0.45),
-                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+.logo {
+    width: 64px;
+    height: 64px;
 
-            backdrop-filter: blur(15px);
-        }
+    margin: 0 auto 20px;
 
-        /* =========================
-           LOGO
-        ========================= */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-        .logo {
-            width: 64px;
-            height: 64px;
+    border-radius: 18px;
 
-            margin: 0 auto 22px;
+    background: linear-gradient(135deg, #7c5cff, #b45cff);
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+}
 
-            border-radius: 18px;
+h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
 
-            background: linear-gradient(
-                135deg,
-                #7c5cff,
-                #b45cff
-            );
+.subtitle {
+    text-align: center;
+    color: #9da2b8;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
 
-            font-size: 28px;
-            font-weight: 800;
+.input-group {
+    margin-bottom: 22px;
+}
 
-            box-shadow:
-                0 10px 30px rgba(124, 92, 255, 0.3);
-        }
+label {
+    display: block;
+    margin-bottom: 9px;
 
-        /* =========================
-           HEADING
-        ========================= */
+    font-size: 14px;
+    font-weight: bold;
 
-        h1 {
-            text-align: center;
+    color: #dfe2f0;
+}
 
-            font-size: 28px;
+input {
+    width: 100%;
 
-            margin-bottom: 8px;
-        }
+    padding: 14px;
 
-        .subtitle {
-            text-align: center;
+    border-radius: 12px;
 
-            color: #9da2b8;
+    border: 1px solid #30354d;
 
-            font-size: 14px;
+    background: #111421;
 
-            margin-bottom: 32px;
-        }
+    color: white;
 
-        /* =========================
-           INPUT GROUP
-        ========================= */
+    font-size: 15px;
 
-        .input-group {
-            margin-bottom: 22px;
-        }
+    outline: none;
+}
 
-        label {
-            display: block;
+input::placeholder {
+    color: #646a80;
+}
 
-            font-size: 14px;
+input:focus {
+    border-color: #7c5cff;
 
-            font-weight: 600;
+    box-shadow: 0 0 0 3px rgba(124,92,255,0.12);
+}
 
-            color: #dfe2f0;
+/* Password wrapper */
 
-            margin-bottom: 9px;
-        }
+.password-wrapper {
+    position: relative;
+}
 
-        .input-wrapper {
-            position: relative;
-        }
+.password-wrapper input {
+    padding-right: 50px;
+}
 
-        input {
-            width: 100%;
+/* Show password button */
 
-            padding: 14px 15px;
+.show-password {
+    position: absolute;
 
-            border-radius: 12px;
+    right: 12px;
+    top: 50%;
 
-            border: 1px solid #30354d;
+    transform: translateY(-50%);
 
-            background: #111421;
+    background: none;
+    border: none;
 
-            color: white;
+    color: #858ba3;
 
-            font-size: 15px;
+    cursor: pointer;
 
-            outline: none;
+    font-size: 16px;
+}
 
-            transition: 0.2s;
-        }
+/* Hint */
 
-        input::placeholder {
-            color: #646a80;
-        }
+.hint {
+    display: none;
 
-        input:focus {
-            border-color: #7c5cff;
+    margin-top: 9px;
 
-            box-shadow:
-                0 0 0 3px rgba(124, 92, 255, 0.12);
-        }
+    font-size: 12px;
 
-        /* =========================
-           PASSWORD
-        ========================= */
+    color: #a998ff;
+}
 
-        #password {
-            padding-right: 48px;
-        }
+.hint.show {
+    display: block;
+}
 
-        .show-password {
-            position: absolute;
+/* Login button */
 
-            right: 14px;
-            top: 50%;
+.login-btn {
+    width: 100%;
 
-            transform: translateY(-50%);
+    padding: 14px;
 
-            background: none;
+    margin-top: 5px;
 
-            border: none;
+    border: none;
+    border-radius: 12px;
 
-            color: #858ba3;
+    background: linear-gradient(135deg, #7c5cff, #a855f7);
 
-            cursor: pointer;
+    color: white;
 
-            font-size: 16px;
+    font-size: 15px;
+    font-weight: bold;
 
-            padding: 4px;
-        }
+    cursor: pointer;
 
-        .show-password:hover {
-            color: white;
-        }
+    transition: 0.2s;
+}
 
-        /* =========================
-           PASSWORD HINT
-        ========================= */
+.login-btn:hover {
+    transform: translateY(-2px);
+}
 
-        .hint {
-            margin-top: 9px;
+.login-btn:active {
+    transform: translateY(0);
+}
 
-            font-size: 12px;
+/* Message */
 
-            color: #9f8cff;
+.message {
+    min-height: 20px;
 
-            display: none;
+    margin-top: 16px;
 
-            animation: fadeIn 0.25s ease;
-        }
+    text-align: center;
 
-        .hint.visible {
-            display: block;
-        }
+    font-size: 13px;
+}
 
-        @keyframes fadeIn {
+.error {
+    color: #ff6b81;
+}
 
-            from {
-                opacity: 0;
-                transform: translateY(-3px);
-            }
+.success {
+    color: #63e6be;
+}
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+.footer {
+    margin-top: 28px;
 
-        }
+    text-align: center;
 
-        /* =========================
-           LOGIN BUTTON
-        ========================= */
+    color: #555b72;
 
-        .login-btn {
-            width: 100%;
+    font-size: 11px;
+}
 
-            margin-top: 8px;
+@media (max-width: 480px) {
 
-            padding: 14px;
+    .login-card {
+        padding: 32px 24px;
+    }
 
-            border: none;
+    h1 {
+        font-size: 25px;
+    }
 
-            border-radius: 12px;
-
-            background: linear-gradient(
-                135deg,
-                #7c5cff,
-                #a855f7
-            );
-
-            color: white;
-
-            font-size: 15px;
-
-            font-weight: 700;
-
-            cursor: pointer;
-
-            transition: 0.2s;
-
-            box-shadow:
-                0 10px 25px rgba(124, 92, 255, 0.25);
-        }
-
-        .login-btn:hover {
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 14px 30px rgba(124, 92, 255, 0.35);
-        }
-
-        .login-btn:active {
-            transform: translateY(0);
-        }
-
-        /* =========================
-           MESSAGE
-        ========================= */
-
-        .message {
-            text-align: center;
-
-            margin-top: 18px;
-
-            font-size: 13px;
-
-            min-height: 18px;
-        }
-
-        .error {
-            color: #ff6b81;
-        }
-
-        .success {
-            color: #63e6be;
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        .footer {
-            text-align: center;
-
-            margin-top: 28px;
-
-            color: #555b72;
-
-            font-size: 11px;
-        }
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 480px) {
-
-            .login-card {
-                padding: 34px 24px;
-
-                border-radius: 20px;
-            }
-
-            h1 {
-                font-size: 25px;
-            }
-
-            .logo {
-                width: 58px;
-                height: 58px;
-            }
-
-        }
-    </style>
+    .logo {
+        width: 58px;
+        height: 58px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- =========================
-         LOGIN CARD
-    ========================= -->
+<div class="login-card">
 
-    <div class="login-card">
+    <div class="logo">
+        P
+    </div>
 
-        <!-- LOGO -->
-        <div class="logo">
-            P
-        </div>
+    <h1>Welcome</h1>
 
-        <!-- TITLE -->
-        <h1>Welcome</h1>
-
-        <p class="subtitle">
-            Enter your details to continue
-        </p>
+    <p class="subtitle">
+        Enter your details to continue
+    </p>
 
 
-        <!-- =========================
-             USERNAME
-        ========================= -->
+    <!-- USERNAME -->
 
-        <div class="input-group">
+    <div class="input-group">
 
-            <label for="username">
-                Username
-            </label>
+        <label for="username">
+            Username
+        </label>
+
+        <input
+            type="text"
+            id="username"
+            placeholder="Enter your name"
+            autocomplete="off"
+        >
+
+    </div>
+
+
+    <!-- PASSWORD -->
+
+    <div class="input-group">
+
+        <label for="password">
+            Password
+        </label>
+
+        <div class="password-wrapper">
 
             <input
-                type="text"
-                id="username"
-                placeholder="Enter your name"
-                autocomplete="off"
+                type="password"
+                id="password"
+                placeholder="DD/MM"
             >
 
-        </div>
-
-
-        <!-- =========================
-             PASSWORD
-        ========================= -->
-
-        <div class="input-group">
-
-            <label for="password">
-                Password
-            </label>
-
-            <div class="input-wrapper">
-
-                <input
-                    type="password"
-                    id="password"
-                    placeholder="DD/MM"
-                >
-
-                <button
-                    type="button"
-                    class="show-password"
-                    onclick="togglePassword()"
-                    aria-label="Show password"
-                >
-                    👁
-                </button>
-
-            </div>
-
-
-            <!-- HINT -->
-
-            <div id="hint" class="hint">
-                💡 Hint: It's Prasad's birthdate.
-            </div>
+            <button
+                type="button"
+                class="show-password"
+                onclick="togglePassword()"
+            >
+                👁
+            </button>
 
         </div>
 
 
-        <!-- =========================
-             LOGIN BUTTON
-        ========================= -->
-
-        <button
-            class="login-btn"
-            onclick="login()"
-        >
-            Login
-        </button>
-
-
-        <!-- =========================
-             MESSAGE
-        ========================= -->
-
-        <div
-            id="message"
-            class="message"
-        ></div>
-
-
-        <!-- FOOTER -->
-
-        <div class="footer">
-            Project 3
+        <div id="hint" class="hint">
+            💡 Hint: It's Prasad's birthdate.
         </div>
 
     </div>
 
 
-    <script>
+    <!-- LOGIN -->
 
-        /* =========================================
-           SHOW HINT WHEN USERNAME IS ENTERED
-        ========================================= */
-
-        const usernameInput =
-            document.getElementById("username");
-
-        const hint =
-            document.getElementById("hint");
+    <button
+        class="login-btn"
+        onclick="login()"
+    >
+        Login
+    </button>
 
 
-        usernameInput.addEventListener(
-            "input",
-            function () {
-
-                if (this.value.trim().length > 0) {
-
-                    hint.classList.add("visible");
-
-                } else {
-
-                    hint.classList.remove("visible");
-
-                }
-
-            }
-        );
+    <div id="message" class="message"></div>
 
 
-        /* =========================================
-           SHOW / HIDE PASSWORD
-        ========================================= */
+    <div class="footer">
+        Project 3
+    </div>
 
-        function togglePassword() {
-
-            const passwordInput =
-                document.getElementById("password");
-
-            const button =
-                document.querySelector(".show-password");
+</div>
 
 
-            if (passwordInput.type === "password") {
+<script>
 
-                passwordInput.type = "text";
+/* Show the hint when username is entered */
 
-                button.textContent = "🙈";
+const username = document.getElementById("username");
+const hint = document.getElementById("hint");
 
-            } else {
+username.addEventListener("input", function() {
 
-                passwordInput.type = "password";
+    if (username.value.trim() !== "") {
+        hint.classList.add("show");
+    } else {
+        hint.classList.remove("show");
+    }
 
-                button.textContent = "👁";
-
-            }
-
-        }
-
-
-        /* =========================================
-           LOGIN FUNCTION
-        ========================================= */
-
-        function login() {
-
-            const username =
-                document.getElementById("username")
-                .value
-                .trim();
-
-            const password =
-                document.getElementById("password")
-                .value
-                .trim();
-
-            const message =
-                document.getElementById("message");
+});
 
 
-            /* =========================
-               USERNAME CHECK
-            ========================= */
+/* Show / hide password */
 
-            if (username === "") {
+function togglePassword() {
 
-                message.textContent =
-                    "Please enter your username.";
+    const password = document.getElementById("password");
+    const button = document.querySelector(".show-password");
 
-                message.className =
-                    "message error";
+    if (password.type === "password") {
 
-                return;
-            }
+        password.type = "text";
+        button.textContent = "🙈";
 
+    } else {
 
-            /* =========================
-               PASSWORD CHECK
-            ========================= */
+        password.type = "password";
+        button.textContent = "👁";
 
-            if (password === "") {
+    }
 
-                message.textContent =
-                    "Please enter your password.";
-
-                message.className =
-                    "message error";
-
-                return;
-            }
+}
 
 
-            /* =========================
-               CORRECT PASSWORD
-            ========================= */
+/* Login */
 
-            if (password === "14/03") {
+function login() {
 
-                message.textContent =
-                    "Login successful!";
+    const usernameValue =
+        document.getElementById("username").value.trim();
 
-                message.className =
-                    "message success";
+    const passwordValue =
+        document.getElementById("password").value.trim();
+
+    const message =
+        document.getElementById("message");
 
 
-                /*
-                    NEXT PART OF PROJECT 3
-                    WILL BE ADDED HERE.
-                */
+    if (usernameValue === "") {
 
-            } else {
+        message.textContent =
+            "Please enter your username.";
 
-                message.textContent =
-                    "Incorrect password.";
+        message.className =
+            "message error";
 
-                message.className =
-                    "message error";
+        return;
 
-            }
+    }
 
-        }
 
-    </script>
+    if (passwordValue === "") {
+
+        message.textContent =
+            "Please enter your password.";
+
+        message.className =
+            "message error";
+
+        return;
+
+    }
+
+
+    if (passwordValue === "14/03") {
+
+        message.textContent =
+            "Login successful!";
+
+        message.className =
+            "message success";
+
+    } else {
+
+        message.textContent =
+            "Incorrect password.";
+
+        message.className =
+            "message error";
+
+    }
+
+}
+
+</script>
 
 </body>
 </html>
