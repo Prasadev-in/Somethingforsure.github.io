@@ -2,65 +2,57 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>A Little Something ♡</title>
 
 <style>
 
-/* =====================================================
-   RESET
-===================================================== */
-
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
 }
 
-html {
+html,
+body {
     width: 100%;
     min-height: 100%;
 }
 
 body {
-    width: 100%;
     min-height: 100vh;
     min-height: 100dvh;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
-    padding:
-        max(18px, env(safe-area-inset-top))
-        max(18px, env(safe-area-inset-right))
-        max(18px, env(safe-area-inset-bottom))
-        max(18px, env(safe-area-inset-left));
+    padding: 16px;
 
     font-family: "Segoe UI", Arial, sans-serif;
 
     color: #4b3543;
 
     background:
-        radial-gradient(circle at 10% 10%, #ffd6e7 0%, transparent 35%),
-        radial-gradient(circle at 90% 15%, #e4d8ff 0%, transparent 35%),
-        radial-gradient(circle at 50% 100%, #ffe9d6 0%, transparent 40%),
-        #fff8fb;
+        radial-gradient(circle at 5% 5%, #ffdbe9 0%, transparent 32%),
+        radial-gradient(circle at 95% 10%, #e6dcff 0%, transparent 32%),
+        radial-gradient(circle at 50% 100%, #ffeadc 0%, transparent 38%),
+        #fff9fc;
 
     overflow-x: hidden;
 }
 
 
 /* =====================================================
-   FLOATING HEARTS
+   BACKGROUND HEARTS
 ===================================================== */
 
 .background-heart {
     position: fixed;
 
-    color: rgba(226, 117, 157, 0.13);
+    color: rgba(226, 117, 157, 0.11);
 
     pointer-events: none;
 
@@ -73,28 +65,28 @@ body {
 
 .heart1 {
     top: 8%;
-    left: 6%;
-    font-size: 34px;
+    left: 5%;
+    font-size: 30px;
 }
 
 .heart2 {
-    bottom: 14%;
-    left: 5%;
-    font-size: 25px;
+    bottom: 12%;
+    left: 4%;
+    font-size: 22px;
     animation-delay: 2s;
 }
 
 .heart3 {
-    top: 13%;
-    right: 6%;
-    font-size: 28px;
+    top: 12%;
+    right: 5%;
+    font-size: 25px;
     animation-delay: 1s;
 }
 
 .heart4 {
-    bottom: 9%;
-    right: 7%;
-    font-size: 38px;
+    bottom: 8%;
+    right: 5%;
+    font-size: 32px;
     animation-delay: 3s;
 }
 
@@ -105,9 +97,8 @@ body {
     }
 
     50% {
-        transform: translateY(-12px) rotate(7deg);
+        transform: translateY(-10px) rotate(6deg);
     }
-
 }
 
 
@@ -117,53 +108,52 @@ body {
 
 .card {
 
-    width: min(100%, 460px);
+    width: min(100%, 430px);
 
-    max-height: calc(100dvh - 36px);
+    max-height: calc(100dvh - 32px);
 
     overflow-y: auto;
     overflow-x: hidden;
 
-    padding: 38px 32px;
+    padding: 34px 28px;
 
-    background: rgba(255, 255, 255, 0.80);
+    background: rgba(255, 255, 255, 0.82);
 
-    border: 1px solid rgba(255, 255, 255, 0.90);
+    border: 1px solid rgba(255, 255, 255, 0.9);
 
-    border-radius: 30px;
+    border-radius: 28px;
 
     box-shadow:
-        0 25px 70px rgba(170, 110, 140, 0.18),
-        0 8px 25px rgba(170, 110, 140, 0.08);
+        0 20px 55px rgba(170, 110, 140, 0.16),
+        0 5px 20px rgba(170, 110, 140, 0.07);
 
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
     position: relative;
 
     z-index: 2;
 
-    animation: cardAppear 0.6s ease;
-
     scrollbar-width: none;
+
+    animation: appear 0.55s ease;
 }
 
 .card::-webkit-scrollbar {
     display: none;
 }
 
-@keyframes cardAppear {
+@keyframes appear {
 
     from {
         opacity: 0;
-        transform: translateY(18px) scale(0.98);
+        transform: translateY(15px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: translateY(0);
     }
-
 }
 
 
@@ -173,30 +163,30 @@ body {
 
 .logo {
 
-    width: 70px;
-    height: 70px;
+    width: 62px;
+    height: 62px;
 
-    margin: 0 auto 20px;
+    margin: 0 auto 17px;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     border-radius: 50%;
 
     background:
         linear-gradient(
             135deg,
-            #f7a8c4,
-            #c9b4f7
+            #f5aac5,
+            #c8b5f4
         );
 
     color: white;
 
-    font-size: 28px;
+    font-size: 25px;
 
     box-shadow:
-        0 12px 28px rgba(210, 130, 165, 0.28);
+        0 9px 22px rgba(210, 130, 165, 0.22);
 }
 
 h1 {
@@ -205,13 +195,13 @@ h1 {
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: clamp(27px, 7vw, 31px);
+    font-size: 28px;
 
     font-weight: 500;
 
     color: #543b49;
 
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 }
 
 .subtitle {
@@ -220,11 +210,11 @@ h1 {
 
     color: #9b7d8c;
 
-    font-size: 14px;
+    font-size: 13px;
 
     line-height: 1.5;
 
-    margin-bottom: 29px;
+    margin-bottom: 25px;
 }
 
 
@@ -233,16 +223,16 @@ h1 {
 ===================================================== */
 
 .input-group {
-    margin-bottom: 20px;
+    margin-bottom: 17px;
 }
 
 label {
 
     display: block;
 
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 
-    font-size: 13px;
+    font-size: 12px;
 
     font-weight: 600;
 
@@ -253,23 +243,21 @@ input {
 
     width: 100%;
 
-    min-height: 52px;
+    min-height: 48px;
 
-    padding: 14px 16px;
+    padding: 12px 14px;
 
-    border-radius: 14px;
+    border-radius: 13px;
 
     border: 1px solid #efd9e3;
 
-    background: rgba(255, 255, 255, 0.80);
+    background: rgba(255, 255, 255, 0.8);
 
     color: #4b3543;
 
-    font-size: 16px;
+    font-size: 15px;
 
     outline: none;
-
-    transition: 0.2s;
 }
 
 input::placeholder {
@@ -283,7 +271,7 @@ input:focus {
     background: white;
 
     box-shadow:
-        0 0 0 4px rgba(231, 157, 188, 0.13);
+        0 0 0 3px rgba(231, 157, 188, 0.12);
 }
 
 
@@ -296,47 +284,45 @@ input:focus {
 }
 
 .password-wrapper input {
-    padding-right: 55px;
+    padding-right: 48px;
 }
 
 .show-password {
 
     position: absolute;
 
-    right: 8px;
+    right: 5px;
     top: 50%;
 
     transform: translateY(-50%);
 
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
 
     display: flex;
-    align-items: center;
     justify-content: center;
-
-    background: transparent;
+    align-items: center;
 
     border: none;
 
+    background: transparent;
+
     color: #b38d9e;
 
-    cursor: pointer;
+    font-size: 16px;
 
-    font-size: 17px;
+    cursor: pointer;
 }
 
 .hint {
 
     display: none;
 
-    margin-top: 9px;
+    margin-top: 7px;
 
-    font-size: 12px;
+    font-size: 11px;
 
     color: #b06d8e;
-
-    line-height: 1.4;
 }
 
 .hint.show {
@@ -345,13 +331,11 @@ input:focus {
 
 
 /* =====================================================
-   GENERAL BUTTONS
+   BUTTONS
 ===================================================== */
 
 button {
-
     font-family: inherit;
-
     touch-action: manipulation;
 }
 
@@ -360,13 +344,13 @@ button {
 
     width: 100%;
 
-    min-height: 52px;
+    min-height: 48px;
 
-    padding: 14px 18px;
+    padding: 12px 16px;
 
     border: none;
 
-    border-radius: 15px;
+    border-radius: 13px;
 
     background:
         linear-gradient(
@@ -377,18 +361,14 @@ button {
 
     color: white;
 
-    font-size: 15px;
+    font-size: 14px;
 
     font-weight: 600;
-
-    letter-spacing: 0.2px;
 
     cursor: pointer;
 
     box-shadow:
-        0 10px 25px rgba(204, 132, 166, 0.25);
-
-    transition: transform 0.2s ease;
+        0 8px 20px rgba(204, 132, 166, 0.22);
 }
 
 .login-btn {
@@ -407,15 +387,13 @@ button {
 
 .message {
 
-    min-height: 20px;
+    min-height: 18px;
 
-    margin-top: 14px;
+    margin-top: 12px;
 
     text-align: center;
 
-    font-size: 13px;
-
-    line-height: 1.4;
+    font-size: 12px;
 }
 
 .error {
@@ -431,11 +409,17 @@ button {
    DATE PAGE
 ===================================================== */
 
-.date-page {
+.date-page,
+.reason-page,
+.warning-page,
+.details-page {
     display: none;
 }
 
-.date-page.active {
+.date-page.active,
+.reason-page.active,
+.warning-page.active,
+.details-page.active {
     display: block;
 }
 
@@ -443,9 +427,9 @@ button {
 
     text-align: center;
 
-    font-size: clamp(45px, 13vw, 58px);
+    font-size: 48px;
 
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 
     animation: heartbeat 1.5s infinite;
 }
@@ -457,9 +441,8 @@ button {
     }
 
     50% {
-        transform: scale(1.10);
+        transform: scale(1.08);
     }
-
 }
 
 .date-title {
@@ -468,48 +451,48 @@ button {
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: clamp(27px, 7vw, 31px);
+    font-size: 28px;
 
     font-weight: 500;
 
     color: #543b49;
 
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .date-question {
 
     text-align: center;
 
-    font-size: clamp(16px, 4.5vw, 18px);
+    font-size: 16px;
 
-    line-height: 1.55;
+    line-height: 1.5;
 
     color: #704f60;
 
-    margin-bottom: 26px;
+    margin-bottom: 23px;
 }
 
 
 /* =====================================================
-   YES / NO AREA
+   YES / NO
 ===================================================== */
 
 .date-buttons {
 
-    position: relative;
-
     width: 100%;
 
-    height: 65px;
+    height: 60px;
+
+    position: relative;
 
     display: flex;
 
-    justify-content: center;
-
     align-items: center;
 
-    gap: 14px;
+    justify-content: center;
+
+    gap: 12px;
 
     overflow: hidden;
 }
@@ -517,18 +500,20 @@ button {
 .yes-btn,
 .no-btn {
 
-    min-height: 50px;
+    min-height: 46px;
 
-    padding: 13px 24px;
+    padding: 11px 22px;
 
     border-radius: 50px;
 
-    font-size: 15px;
+    font-size: 14px;
 
     white-space: nowrap;
 }
 
 .yes-btn {
+
+    border: none;
 
     background:
         linear-gradient(
@@ -540,14 +525,14 @@ button {
     color: white;
 
     box-shadow:
-        0 8px 20px rgba(210, 120, 160, 0.25);
-}
-
-.yes-btn:active {
-    transform: scale(0.96);
+        0 7px 18px rgba(210, 120, 160, 0.22);
 }
 
 .no-btn {
+
+    position: absolute;
+
+    left: calc(50% + 6px);
 
     background: white;
 
@@ -555,38 +540,23 @@ button {
 
     color: #8b6878;
 
-    position: absolute;
-
-    left: calc(50% + 8px);
-
-    transform: translateX(0);
-
     transition:
         left 0.18s ease,
-        top 0.18s ease,
-        transform 0.18s ease;
+        top 0.18s ease;
 }
 
 
 /* =====================================================
-   REASON PAGE
+   REASON
 ===================================================== */
-
-.reason-page {
-    display: none;
-}
-
-.reason-page.active {
-    display: block;
-}
 
 .reason-icon {
 
     text-align: center;
 
-    font-size: 48px;
+    font-size: 43px;
 
-    margin-bottom: 13px;
+    margin-bottom: 10px;
 }
 
 .reason-title {
@@ -595,11 +565,11 @@ button {
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: clamp(25px, 7vw, 29px);
+    font-size: 26px;
 
     color: #543b49;
 
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .reason-text {
@@ -608,24 +578,24 @@ button {
 
     color: #9b7d8c;
 
-    font-size: 14px;
+    font-size: 13px;
 
-    line-height: 1.55;
+    line-height: 1.5;
 
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .reason-box {
 
     width: 100%;
 
-    min-height: 125px;
+    min-height: 115px;
+
+    padding: 13px;
 
     resize: vertical;
 
-    padding: 14px;
-
-    border-radius: 15px;
+    border-radius: 13px;
 
     border: 1px solid #efd9e3;
 
@@ -635,7 +605,7 @@ button {
 
     font-family: inherit;
 
-    font-size: 16px;
+    font-size: 15px;
 
     outline: none;
 }
@@ -645,11 +615,11 @@ button {
     border-color: #e3a1bc;
 
     box-shadow:
-        0 0 0 4px rgba(231,157,188,0.13);
+        0 0 0 3px rgba(231,157,188,0.12);
 }
 
 .proceed-btn {
-    margin-top: 14px;
+    margin-top: 12px;
 }
 
 
@@ -657,21 +627,13 @@ button {
    WARNING
 ===================================================== */
 
-.warning-page {
-    display: none;
-}
-
-.warning-page.active {
-    display: block;
-}
-
 .warning-icon {
 
     text-align: center;
 
-    font-size: 52px;
+    font-size: 48px;
 
-    margin-bottom: 13px;
+    margin-bottom: 10px;
 }
 
 .warning-title {
@@ -680,44 +642,36 @@ button {
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: clamp(27px, 7vw, 31px);
+    font-size: 28px;
 
     color: #543b49;
 
-    margin-bottom: 15px;
+    margin-bottom: 13px;
 }
 
 .warning-message {
 
     text-align: center;
 
-    font-size: 16px;
+    font-size: 15px;
 
-    line-height: 1.65;
+    line-height: 1.6;
 
     color: #704f60;
 }
 
 
 /* =====================================================
-   DETAILS
+   DATE DETAILS
 ===================================================== */
-
-.details-page {
-    display: none;
-}
-
-.details-page.active {
-    display: block;
-}
 
 .details-icon {
 
     text-align: center;
 
-    font-size: 52px;
+    font-size: 48px;
 
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .details-title {
@@ -726,11 +680,11 @@ button {
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: clamp(27px, 7vw, 31px);
+    font-size: 28px;
 
     color: #543b49;
 
-    margin-bottom: 20px;
+    margin-bottom: 17px;
 }
 
 .details-card {
@@ -739,9 +693,9 @@ button {
 
     border: 1px solid #f0dce5;
 
-    border-radius: 18px;
+    border-radius: 16px;
 
-    padding: 8px 17px;
+    padding: 5px 15px;
 }
 
 .detail-row {
@@ -750,9 +704,9 @@ button {
 
     align-items: center;
 
-    gap: 12px;
+    gap: 11px;
 
-    padding: 14px 0;
+    padding: 12px 0;
 
     border-bottom: 1px solid #f3e5eb;
 }
@@ -763,13 +717,13 @@ button {
 
 .detail-emoji {
 
-    font-size: 20px;
-
-    width: 27px;
+    width: 26px;
 
     flex-shrink: 0;
 
     text-align: center;
+
+    font-size: 19px;
 }
 
 .detail-content {
@@ -779,22 +733,22 @@ button {
 
 .detail-label {
 
-    font-size: 10px;
+    font-size: 9px;
 
     text-transform: uppercase;
 
-    letter-spacing: 1px;
+    letter-spacing: 0.9px;
 
     color: #b08b9d;
 
-    margin-bottom: 3px;
+    margin-bottom: 2px;
 }
 
 .detail-value {
 
-    font-size: 14px;
+    font-size: 13px;
 
-    line-height: 1.4;
+    line-height: 1.35;
 
     font-weight: 600;
 
@@ -810,23 +764,23 @@ button {
 
 .footer {
 
-    margin-top: 24px;
+    margin-top: 20px;
 
     text-align: center;
 
     color: #c19eae;
 
-    font-size: 10px;
+    font-size: 9px;
 
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
 }
 
 
 /* =====================================================
-   SMALL PHONES
+   PHONE OPTIMIZATION
 ===================================================== */
 
-@media (max-width: 380px) {
+@media (max-width: 480px) {
 
     body {
         padding: 12px;
@@ -834,75 +788,109 @@ button {
 
     .card {
 
-        padding: 28px 20px;
+        width: 100%;
+
+        padding: 30px 22px;
 
         border-radius: 24px;
 
         max-height: calc(100dvh - 24px);
     }
 
-    .logo {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 16px;
+    .background-heart {
+        opacity: 0.65;
     }
-
-    .subtitle {
-        margin-bottom: 24px;
-    }
-
-    .input-group {
-        margin-bottom: 17px;
-    }
-
-    .date-buttons {
-        gap: 8px;
-    }
-
-    .yes-btn,
-    .no-btn {
-        padding-left: 19px;
-        padding-right: 19px;
-        font-size: 14px;
-    }
-
 }
 
 
 /* =====================================================
-   VERY SHORT SCREENS
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 360px) {
+
+    body {
+        padding: 9px;
+    }
+
+    .card {
+
+        padding: 26px 18px;
+
+        border-radius: 22px;
+    }
+
+    .logo {
+
+        width: 56px;
+        height: 56px;
+
+        font-size: 22px;
+
+        margin-bottom: 14px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+        margin-bottom: 21px;
+    }
+
+    .date-title {
+        font-size: 25px;
+    }
+
+    .date-question {
+        font-size: 15px;
+    }
+
+    .yes-btn,
+    .no-btn {
+
+        padding-left: 18px;
+        padding-right: 18px;
+
+        font-size: 13px;
+    }
+}
+
+
+/* =====================================================
+   SHORT PHONE SCREENS
 ===================================================== */
 
 @media (max-height: 650px) {
 
     body {
         align-items: flex-start;
-        padding-top: 12px;
-        padding-bottom: 12px;
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
 
     .card {
-        max-height: calc(100dvh - 24px);
+        max-height: calc(100dvh - 16px);
     }
 
     .logo {
-        width: 56px;
-        height: 56px;
-        margin-bottom: 12px;
+        width: 52px;
+        height: 52px;
+        margin-bottom: 11px;
     }
 
     .subtitle {
-        margin-bottom: 20px;
+        margin-bottom: 18px;
     }
-
 }
 
 
 /* =====================================================
-   DESKTOP HOVER
+   DESKTOP
 ===================================================== */
 
-@media (hover: hover) {
+@media (min-width: 481px) {
 
     .login-btn:hover,
     .proceed-btn:hover {
@@ -914,7 +902,6 @@ button {
 
         transform: translateY(-2px) scale(1.02);
     }
-
 }
 
 </style>
@@ -924,351 +911,342 @@ button {
 <body>
 
 
-<!-- =====================================================
-     BACKGROUND
-===================================================== -->
-
 <div class="background-heart heart1">♡</div>
 <div class="background-heart heart2">♡</div>
 <div class="background-heart heart3">♡</div>
 <div class="background-heart heart4">♡</div>
 
 
-<!-- =====================================================
-     MAIN CARD
-===================================================== -->
-
 <div class="card">
 
 
-    <!-- =================================================
-         LOGIN
-    ================================================== -->
+<!-- =====================================================
+     LOGIN
+===================================================== -->
 
-    <div id="loginPage">
+<div id="loginPage">
 
-        <div class="logo">
-            ✦
-        </div>
+    <div class="logo">
+        ✦
+    </div>
 
-        <h1>Welcome</h1>
+    <h1>Welcome</h1>
 
-        <p class="subtitle">
-            There's a little something waiting for you ✨
-        </p>
+    <p class="subtitle">
+        There's a little something waiting for you ✨
+    </p>
 
 
-        <div class="input-group">
+    <div class="input-group">
 
-            <label for="username">
-                Your name
-            </label>
+        <label for="username">
+            Your name
+        </label>
+
+        <input
+            type="text"
+            id="username"
+            placeholder="Enter your name"
+            autocomplete="off"
+        >
+
+    </div>
+
+
+    <div class="input-group">
+
+        <label for="password">
+            Password
+        </label>
+
+        <div class="password-wrapper">
 
             <input
-                type="text"
-                id="username"
-                placeholder="Enter your name"
-                autocomplete="off"
+                type="password"
+                id="password"
+                placeholder="Enter your password"
             >
-
-        </div>
-
-
-        <div class="input-group">
-
-            <label for="password">
-                Password
-            </label>
-
-            <div class="password-wrapper">
-
-                <input
-                    type="password"
-                    id="password"
-                    placeholder="Enter your password"
-                >
-
-                <button
-                    type="button"
-                    class="show-password"
-                    onclick="togglePassword()"
-                    aria-label="Show password"
-                >
-                    ♡
-                </button>
-
-            </div>
-
-            <div id="hint" class="hint">
-                ✨ Hint: It's Prasad's birthdate.
-            </div>
-
-        </div>
-
-
-        <button
-            class="login-btn"
-            onclick="login()"
-        >
-            Continue ✨
-        </button>
-
-
-        <div
-            id="loginMessage"
-            class="message"
-        ></div>
-
-    </div>
-
-
-    <!-- =================================================
-         DATE QUESTION
-    ================================================== -->
-
-    <div id="datePage" class="date-page">
-
-        <div class="date-icon">
-            💌
-        </div>
-
-        <div class="date-title">
-            A Little Question...
-        </div>
-
-        <div class="date-question">
-            Would you like to go on a date with me? ♡
-        </div>
-
-
-        <div class="date-buttons">
 
             <button
-                class="yes-btn"
-                onclick="sayYes()"
+                type="button"
+                class="show-password"
+                onclick="togglePassword()"
             >
-                Yes 💕
-            </button>
-
-            <button
-                id="noButton"
-                class="no-btn"
-                onclick="sayNo()"
-            >
-                No 🙃
+                ♡
             </button>
 
         </div>
 
+        <div id="hint" class="hint">
+            ✨ Hint: It's Prasad's birthdate.
+        </div>
+
     </div>
 
 
-    <!-- =================================================
-         REASON
-    ================================================== -->
-
-    <div id="reasonPage" class="reason-page">
-
-        <div class="reason-icon">
-            🥺
-        </div>
-
-        <div class="reason-title">
-            Okay... tell me why?
-        </div>
-
-        <div class="reason-text">
-            If you're saying no, at least give me a reason.
-            <br>
-            I promise I'll read it properly. ♡
-        </div>
+    <button
+        class="login-btn"
+        onclick="login()"
+    >
+        Continue ✨
+    </button>
 
 
-        <textarea
-            id="reasonBox"
-            class="reason-box"
-            placeholder="Write your reason here..."
-        ></textarea>
+    <div
+        id="loginMessage"
+        class="message"
+    ></div>
 
+</div>
+
+
+<!-- =====================================================
+     DATE QUESTION
+===================================================== -->
+
+<div id="datePage" class="date-page">
+
+    <div class="date-icon">
+        💌
+    </div>
+
+    <div class="date-title">
+        A Little Question...
+    </div>
+
+    <div class="date-question">
+        Would you like to go on a date with me? ♡
+    </div>
+
+
+    <div class="date-buttons">
 
         <button
-            class="proceed-btn"
-            onclick="submitReason()"
+            class="yes-btn"
+            onclick="sayYes()"
         >
-            Proceed
+            Yes 💕
+        </button>
+
+        <button
+            id="noButton"
+            class="no-btn"
+            onclick="sayNo()"
+        >
+            No 🙃
         </button>
 
     </div>
 
+</div>
 
-    <!-- =================================================
-         WARNING
-    ================================================== -->
 
-    <div id="warningPage" class="warning-page">
+<!-- =====================================================
+     REASON
+===================================================== -->
 
-        <div class="warning-icon">
-            ⚠️
-        </div>
+<div id="reasonPage" class="reason-page">
 
-        <div class="warning-title">
-            Wait a minute...
-        </div>
+    <div class="reason-icon">
+        🥺
+    </div>
 
-        <div class="warning-message">
+    <div class="reason-title">
+        Okay... tell me why?
+    </div>
 
-            Your response has been received.
-
-            <br><br>
-
-            But unfortunately...
-
-            <br>
-
-            <strong>
-                "No" is currently under maintenance. 😂
-            </strong>
-
-            <br><br>
-
-            Please proceed with the date. ♡
-
-        </div>
-
+    <div class="reason-text">
+        If you're saying no, at least give me a reason.
+        <br>
+        I promise I'll read it properly. ♡
     </div>
 
 
-    <!-- =================================================
-         DATE DETAILS
-    ================================================== -->
-
-    <div id="detailsPage" class="details-page">
-
-        <div class="details-icon">
-            🌹
-        </div>
-
-        <div class="details-title">
-            It's a Date ♡
-        </div>
+    <textarea
+        id="reasonBox"
+        class="reason-box"
+        placeholder="Write your reason here..."
+    ></textarea>
 
 
-        <div class="details-card">
+    <button
+        class="proceed-btn"
+        onclick="submitReason()"
+    >
+        Proceed
+    </button>
+
+</div>
 
 
-            <div class="detail-row">
+<!-- =====================================================
+     WARNING
+===================================================== -->
 
-                <div class="detail-emoji">
-                    📍
-                </div>
+<div id="warningPage" class="warning-page">
 
-                <div class="detail-content">
+    <div class="warning-icon">
+        ⚠️
+    </div>
 
-                    <div class="detail-label">
-                        Venue
-                    </div>
+    <div class="warning-title">
+        Wait a minute...
+    </div>
 
-                    <div class="detail-value">
-                        Your Venue Here
-                    </div>
+    <div class="warning-message">
 
-                </div>
+        Your response has been received.
 
-            </div>
+        <br><br>
 
+        But unfortunately...
 
-            <div class="detail-row">
+        <br>
 
-                <div class="detail-emoji">
-                    📅
-                </div>
+        <strong>
+            "No" is currently under maintenance. 😂
+        </strong>
 
-                <div class="detail-content">
+        <br><br>
 
-                    <div class="detail-label">
-                        Date
-                    </div>
-
-                    <div class="detail-value">
-                        Your Date Here
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="detail-row">
-
-                <div class="detail-emoji">
-                    🕐
-                </div>
-
-                <div class="detail-content">
-
-                    <div class="detail-label">
-                        Time
-                    </div>
-
-                    <div class="detail-value">
-                        Your Time Here
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="detail-row">
-
-                <div class="detail-emoji">
-                    👗
-                </div>
-
-                <div class="detail-content">
-
-                    <div class="detail-label">
-                        Dress Code
-                    </div>
-
-                    <div class="detail-value">
-                        Something You Feel Pretty In ♡
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="detail-row">
-
-                <div class="detail-emoji">
-                    🫶
-                </div>
-
-                <div class="detail-content">
-
-                    <div class="detail-label">
-                        Company
-                    </div>
-
-                    <div class="detail-value">
-                        Me, obviously.
-                    </div>
-
-                </div>
-
-            </div>
-
-
-        </div>
+        Please proceed with the date. ♡
 
     </div>
 
+</div>
 
-    <div class="footer">
-        made with a little extra thought ♡
+
+<!-- =====================================================
+     DATE DETAILS
+===================================================== -->
+
+<div id="detailsPage" class="details-page">
+
+    <div class="details-icon">
+        🌹
     </div>
+
+    <div class="details-title">
+        It's a Date ♡
+    </div>
+
+
+    <div class="details-card">
+
+
+        <div class="detail-row">
+
+            <div class="detail-emoji">
+                📍
+            </div>
+
+            <div class="detail-content">
+
+                <div class="detail-label">
+                    Venue
+                </div>
+
+                <div class="detail-value">
+                    Your Venue Here
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="detail-row">
+
+            <div class="detail-emoji">
+                📅
+            </div>
+
+            <div class="detail-content">
+
+                <div class="detail-label">
+                    Date
+                </div>
+
+                <div class="detail-value">
+                    Your Date Here
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="detail-row">
+
+            <div class="detail-emoji">
+                🕐
+            </div>
+
+            <div class="detail-content">
+
+                <div class="detail-label">
+                    Time
+                </div>
+
+                <div class="detail-value">
+                    Your Time Here
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="detail-row">
+
+            <div class="detail-emoji">
+                👗
+            </div>
+
+            <div class="detail-content">
+
+                <div class="detail-label">
+                    Dress Code
+                </div>
+
+                <div class="detail-value">
+                    Something You Feel Pretty In ♡
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="detail-row">
+
+            <div class="detail-emoji">
+                🫶
+            </div>
+
+            <div class="detail-content">
+
+                <div class="detail-label">
+                    Company
+                </div>
+
+                <div class="detail-value">
+                    Me, obviously.
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<div class="footer">
+    made with a little extra thought ♡
+</div>
 
 
 </div>
@@ -1277,7 +1255,7 @@ button {
 <script>
 
 /* =====================================================
-   PASSWORD VISIBILITY
+   PASSWORD
 ===================================================== */
 
 function togglePassword() {
@@ -1302,12 +1280,11 @@ function togglePassword() {
         button.textContent = "♡";
 
     }
-
 }
 
 
 /* =====================================================
-   LOGIN HINT
+   HINT
 ===================================================== */
 
 const usernameInput =
@@ -1409,11 +1386,6 @@ const noButton =
 
 function sayNo() {
 
-    /*
-       After 4 attempts the button becomes
-       clickable and opens the reason page.
-    */
-
     if (noAttempts >= 4) {
 
         document.getElementById("datePage")
@@ -1435,7 +1407,6 @@ function sayNo() {
 
 /* =====================================================
    MOVE NO BUTTON
-   Mobile-safe movement
 ===================================================== */
 
 function moveNoButton() {
@@ -1443,13 +1414,11 @@ function moveNoButton() {
     const area =
         document.querySelector(".date-buttons");
 
-
     const areaWidth =
         area.clientWidth;
 
     const areaHeight =
         area.clientHeight;
-
 
     const buttonWidth =
         noButton.offsetWidth;
@@ -1457,11 +1426,6 @@ function moveNoButton() {
     const buttonHeight =
         noButton.offsetHeight;
 
-
-    /*
-       Keep button completely inside
-       the visible button area.
-    */
 
     const maxX =
         Math.max(0, areaWidth - buttonWidth);
@@ -1473,16 +1437,15 @@ function moveNoButton() {
     const randomX =
         Math.random() * maxX;
 
-
     const randomY =
         Math.random() * maxY;
 
 
-    noButton.style.left = randomX + "px";
+    noButton.style.left =
+        randomX + "px";
 
-    noButton.style.top = randomY + "px";
-
-    noButton.style.transform = "none";
+    noButton.style.top =
+        randomY + "px";
 
 }
 
@@ -1503,7 +1466,7 @@ function sayYes() {
 
 
 /* =====================================================
-   SUBMIT REASON
+   REASON
 ===================================================== */
 
 function submitReason() {
@@ -1521,7 +1484,6 @@ function submitReason() {
         );
 
         return;
-
     }
 
 
@@ -1531,10 +1493,6 @@ function submitReason() {
     document.getElementById("warningPage")
         .classList.add("active");
 
-
-    /*
-       Show date details after warning.
-    */
 
     setTimeout(function() {
 
