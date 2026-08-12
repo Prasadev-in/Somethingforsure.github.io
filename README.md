@@ -7,44 +7,36 @@
 
 <style>
 
+/* =====================================================
+   GENERAL
+===================================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
-}
-
-html {
-    width: 100%;
-    min-height: 100%;
 }
 
 body {
-    width: 100%;
     min-height: 100vh;
-    min-height: 100dvh;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    padding:
-        max(18px, env(safe-area-inset-top))
-        max(18px, env(safe-area-inset-right))
-        max(18px, env(safe-area-inset-bottom))
-        max(18px, env(safe-area-inset-left));
+    padding: 20px;
 
     font-family: "Segoe UI", Arial, sans-serif;
 
     color: #4b3543;
 
     background:
-        radial-gradient(circle at 10% 10%, #ffd6e7 0%, transparent 35%),
-        radial-gradient(circle at 90% 15%, #e4d8ff 0%, transparent 35%),
+        radial-gradient(circle at 15% 15%, #ffd6e7 0%, transparent 35%),
+        radial-gradient(circle at 85% 20%, #e4d8ff 0%, transparent 35%),
         radial-gradient(circle at 50% 100%, #ffe9d6 0%, transparent 40%),
         #fff8fb;
 
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 
@@ -55,41 +47,38 @@ body {
 .background-heart {
     position: fixed;
 
-    color: rgba(226, 117, 157, 0.13);
+    color: rgba(226, 117, 157, 0.15);
+
+    font-size: 35px;
 
     pointer-events: none;
-
-    user-select: none;
-
-    z-index: 0;
 
     animation: floatHeart 7s ease-in-out infinite;
 }
 
 .heart1 {
-    top: 8%;
-    left: 6%;
-    font-size: 34px;
+    top: 12%;
+    left: 10%;
 }
 
 .heart2 {
-    bottom: 14%;
-    left: 5%;
+    top: 70%;
+    left: 8%;
     font-size: 25px;
     animation-delay: 2s;
 }
 
 .heart3 {
-    top: 13%;
-    right: 6%;
+    top: 18%;
+    right: 10%;
     font-size: 28px;
     animation-delay: 1s;
 }
 
 .heart4 {
-    bottom: 9%;
-    right: 7%;
-    font-size: 38px;
+    bottom: 10%;
+    right: 12%;
+    font-size: 40px;
     animation-delay: 3s;
 }
 
@@ -100,7 +89,7 @@ body {
     }
 
     50% {
-        transform: translateY(-12px) rotate(7deg);
+        transform: translateY(-15px) rotate(8deg);
     }
 
 }
@@ -112,18 +101,14 @@ body {
 
 .card {
 
-    width: min(100%, 460px);
+    width: 100%;
+    max-width: 460px;
 
-    max-height: calc(100dvh - 36px);
+    padding: 42px 34px;
 
-    overflow-y: auto;
-    overflow-x: hidden;
+    background: rgba(255, 255, 255, 0.78);
 
-    padding: 38px 32px;
-
-    background: rgba(255, 255, 255, 0.80);
-
-    border: 1px solid rgba(255, 255, 255, 0.90);
+    border: 1px solid rgba(255, 255, 255, 0.85);
 
     border-radius: 30px;
 
@@ -132,26 +117,19 @@ body {
         0 8px 25px rgba(170, 110, 140, 0.08);
 
     backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
 
     position: relative;
 
     z-index: 2;
 
     animation: cardAppear 0.6s ease;
-
-    scrollbar-width: none;
-}
-
-.card::-webkit-scrollbar {
-    display: none;
 }
 
 @keyframes cardAppear {
 
     from {
         opacity: 0;
-        transform: translateY(18px) scale(0.98);
+        transform: translateY(20px) scale(0.97);
     }
 
     to {
@@ -163,13 +141,13 @@ body {
 
 
 /* =====================================================
-   LOGIN
+   LOGIN PAGE
 ===================================================== */
 
 .logo {
 
-    width: 70px;
-    height: 70px;
+    width: 72px;
+    height: 72px;
 
     margin: 0 auto 20px;
 
@@ -188,7 +166,7 @@ body {
 
     color: white;
 
-    font-size: 28px;
+    font-size: 29px;
 
     box-shadow:
         0 12px 28px rgba(210, 130, 165, 0.28);
@@ -200,7 +178,7 @@ h1 {
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: clamp(27px, 7vw, 31px);
+    font-size: 31px;
 
     font-weight: 500;
 
@@ -217,9 +195,7 @@ h1 {
 
     font-size: 14px;
 
-    line-height: 1.5;
-
-    margin-bottom: 29px;
+    margin-bottom: 32px;
 }
 
 
@@ -228,7 +204,7 @@ h1 {
 ===================================================== */
 
 .input-group {
-    margin-bottom: 20px;
+    margin-bottom: 21px;
 }
 
 label {
@@ -248,23 +224,21 @@ input {
 
     width: 100%;
 
-    min-height: 52px;
-
-    padding: 14px 16px;
+    padding: 15px 16px;
 
     border-radius: 14px;
 
     border: 1px solid #efd9e3;
 
-    background: rgba(255, 255, 255, 0.80);
+    background: rgba(255, 255, 255, 0.75);
 
     color: #4b3543;
 
-    font-size: 16px;
+    font-size: 15px;
 
     outline: none;
 
-    transition: 0.2s;
+    transition: 0.25s;
 }
 
 input::placeholder {
@@ -291,26 +265,19 @@ input:focus {
 }
 
 .password-wrapper input {
-    padding-right: 55px;
+    padding-right: 50px;
 }
 
 .show-password {
 
     position: absolute;
 
-    right: 8px;
+    right: 13px;
     top: 50%;
 
     transform: translateY(-50%);
 
-    width: 42px;
-    height: 42px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: transparent;
+    background: none;
 
     border: none;
 
@@ -330,8 +297,6 @@ input:focus {
     font-size: 12px;
 
     color: #b06d8e;
-
-    line-height: 1.4;
 }
 
 .hint.show {
@@ -340,26 +305,30 @@ input:focus {
 
 
 /* =====================================================
-   GENERAL BUTTONS
+   BUTTON
 ===================================================== */
 
-button {
+.login-btn,
+.proceed-btn,
+.yes-btn,
+.no-btn {
 
-    font-family: inherit;
+    border: none;
 
-    touch-action: manipulation;
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: 0.25s;
 }
 
-.login-btn,
-.proceed-btn {
+.login-btn {
 
     width: 100%;
 
-    min-height: 52px;
+    padding: 15px;
 
-    padding: 14px 18px;
-
-    border: none;
+    margin-top: 7px;
 
     border-radius: 15px;
 
@@ -374,25 +343,12 @@ button {
 
     font-size: 15px;
 
-    font-weight: 600;
-
-    letter-spacing: 0.2px;
-
-    cursor: pointer;
-
     box-shadow:
         0 10px 25px rgba(204, 132, 166, 0.25);
-
-    transition: transform 0.2s ease;
 }
 
-.login-btn {
-    margin-top: 5px;
-}
-
-.login-btn:active,
-.proceed-btn:active {
-    transform: scale(0.98);
+.login-btn:hover {
+    transform: translateY(-2px);
 }
 
 
@@ -404,13 +360,11 @@ button {
 
     min-height: 20px;
 
-    margin-top: 14px;
+    margin-top: 16px;
 
     text-align: center;
 
     font-size: 13px;
-
-    line-height: 1.4;
 }
 
 .error {
@@ -423,7 +377,7 @@ button {
 
 
 /* =====================================================
-   DATE PAGE
+   DATE INVITATION PAGE
 ===================================================== */
 
 .date-page {
@@ -436,11 +390,11 @@ button {
 
 .date-icon {
 
+    font-size: 55px;
+
     text-align: center;
 
-    font-size: clamp(45px, 13vw, 58px);
-
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 
     animation: heartbeat 1.5s infinite;
 }
@@ -452,7 +406,7 @@ button {
     }
 
     50% {
-        transform: scale(1.10);
+        transform: scale(1.12);
     }
 
 }
@@ -463,7 +417,7 @@ button {
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: clamp(27px, 7vw, 31px);
+    font-size: 30px;
 
     font-weight: 500;
 
@@ -476,27 +430,23 @@ button {
 
     text-align: center;
 
-    font-size: clamp(16px, 4.5vw, 18px);
-
-    line-height: 1.55;
+    font-size: 18px;
 
     color: #704f60;
 
-    margin-bottom: 26px;
+    line-height: 1.5;
+
+    margin-bottom: 30px;
 }
 
 
 /* =====================================================
-   YES / NO AREA
+   YES / NO BUTTONS
 ===================================================== */
 
 .date-buttons {
 
     position: relative;
-
-    width: 100%;
-
-    height: 65px;
 
     display: flex;
 
@@ -504,67 +454,56 @@ button {
 
     align-items: center;
 
-    gap: 14px;
+    gap: 18px;
 
-    overflow: hidden;
-}
-
-.yes-btn,
-.no-btn {
-
-    min-height: 50px;
-
-    padding: 13px 24px;
-
-    border-radius: 50px;
-
-    font-size: 15px;
-
-    white-space: nowrap;
+    min-height: 70px;
 }
 
 .yes-btn {
 
+    padding: 14px 30px;
+
+    border-radius: 50px;
+
     background:
-        linear-gradient(
-            135deg,
-            #e995b6,
-            #d77fa5
-        );
+        linear-gradient(135deg, #e995b6, #d77fa5);
 
     color: white;
+
+    font-size: 15px;
 
     box-shadow:
         0 8px 20px rgba(210, 120, 160, 0.25);
 }
 
-.yes-btn:active {
-    transform: scale(0.96);
+.yes-btn:hover {
+    transform: translateY(-3px) scale(1.03);
 }
 
 .no-btn {
 
-    background: white;
+    padding: 14px 30px;
+
+    border-radius: 50px;
+
+    background: #fff;
 
     border: 1px solid #e5ccd7;
 
     color: #8b6878;
 
-    position: absolute;
+    font-size: 15px;
 
-    left: calc(50% + 8px);
+    position: relative;
+}
 
-    transform: translateX(0);
-
-    transition:
-        left 0.18s ease,
-        top 0.18s ease,
-        transform 0.18s ease;
+.no-btn:hover {
+    background: #fff5f8;
 }
 
 
 /* =====================================================
-   REASON PAGE
+   NO REASON BOX
 ===================================================== */
 
 .reason-page {
@@ -581,7 +520,7 @@ button {
 
     font-size: 48px;
 
-    margin-bottom: 13px;
+    margin-bottom: 15px;
 }
 
 .reason-title {
@@ -590,7 +529,7 @@ button {
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: clamp(25px, 7vw, 29px);
+    font-size: 27px;
 
     color: #543b49;
 
@@ -605,18 +544,18 @@ button {
 
     font-size: 14px;
 
-    line-height: 1.55;
+    line-height: 1.5;
 
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .reason-box {
 
     width: 100%;
 
-    min-height: 125px;
+    min-height: 120px;
 
-    resize: vertical;
+    resize: none;
 
     padding: 14px;
 
@@ -624,13 +563,13 @@ button {
 
     border: 1px solid #efd9e3;
 
-    background: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.8);
 
     color: #4b3543;
 
     font-family: inherit;
 
-    font-size: 16px;
+    font-size: 14px;
 
     outline: none;
 }
@@ -644,12 +583,26 @@ button {
 }
 
 .proceed-btn {
-    margin-top: 14px;
+
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 14px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(135deg, #e995b6, #b9a0e8);
+
+    color: white;
+
+    font-size: 15px;
 }
 
 
 /* =====================================================
-   WARNING
+   WARNING PAGE
 ===================================================== */
 
 .warning-page {
@@ -664,9 +617,9 @@ button {
 
     text-align: center;
 
-    font-size: 52px;
+    font-size: 55px;
 
-    margin-bottom: 13px;
+    margin-bottom: 15px;
 }
 
 .warning-title {
@@ -675,7 +628,7 @@ button {
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: clamp(27px, 7vw, 31px);
+    font-size: 30px;
 
     color: #543b49;
 
@@ -686,16 +639,16 @@ button {
 
     text-align: center;
 
-    font-size: 16px;
+    font-size: 17px;
 
-    line-height: 1.65;
+    line-height: 1.6;
 
     color: #704f60;
 }
 
 
 /* =====================================================
-   DETAILS
+   DATE DETAILS
 ===================================================== */
 
 .details-page {
@@ -710,9 +663,9 @@ button {
 
     text-align: center;
 
-    font-size: 52px;
+    font-size: 55px;
 
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .details-title {
@@ -721,33 +674,33 @@ button {
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: clamp(27px, 7vw, 31px);
+    font-size: 30px;
 
     color: #543b49;
 
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .details-card {
 
-    background: rgba(255,255,255,0.78);
+    background: rgba(255,255,255,0.75);
 
     border: 1px solid #f0dce5;
 
     border-radius: 18px;
 
-    padding: 8px 17px;
+    padding: 20px;
 }
 
 .detail-row {
 
     display: flex;
 
-    align-items: center;
+    align-items: flex-start;
 
-    gap: 12px;
+    gap: 15px;
 
-    padding: 14px 0;
+    padding: 13px 0;
 
     border-bottom: 1px solid #f3e5eb;
 }
@@ -758,23 +711,18 @@ button {
 
 .detail-emoji {
 
-    font-size: 20px;
+    font-size: 21px;
 
-    width: 27px;
-
-    flex-shrink: 0;
-
-    text-align: center;
+    width: 30px;
 }
 
 .detail-content {
-    min-width: 0;
     flex: 1;
 }
 
 .detail-label {
 
-    font-size: 10px;
+    font-size: 11px;
 
     text-transform: uppercase;
 
@@ -787,15 +735,11 @@ button {
 
 .detail-value {
 
-    font-size: 14px;
-
-    line-height: 1.4;
+    font-size: 15px;
 
     font-weight: 600;
 
     color: #5e4351;
-
-    word-break: break-word;
 }
 
 
@@ -805,111 +749,674 @@ button {
 
 .footer {
 
-    margin-top: 24px;
+    margin-top: 27px;
 
     text-align: center;
 
     color: #c19eae;
 
-    font-size: 10px;
+    font-size: 11px;
 
     letter-spacing: 0.5px;
 }
 
 
 /* =====================================================
-   SMALL PHONES
+   MOBILE
 ===================================================== */
 
-@media (max-width: 380px) {
-
-    body {
-        padding: 12px;
-    }
+@media (max-width: 480px) {
 
     .card {
-
-        padding: 28px 20px;
-
-        border-radius: 24px;
-
-        max-height: calc(100dvh - 24px);
+        padding: 36px 24px;
     }
 
-    .logo {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 16px;
+    h1,
+    .date-title {
+        font-size: 28px;
     }
 
-    .subtitle {
-        margin-bottom: 24px;
-    }
-
-    .input-group {
-        margin-bottom: 17px;
-    }
-
-    .date-buttons {
-        gap: 8px;
-    }
-
-    .yes-btn,
-    .no-btn {
-        padding-left: 19px;
-        padding-right: 19px;
-        font-size: 14px;
-    }
-
-}
-
-
-/* =====================================================
-   VERY SHORT SCREENS
-===================================================== */
-
-@media (max-height: 650px) {
-
-    body {
-        align-items: flex-start;
-        padding-top: 12px;
-        padding-bottom: 12px;
-    }
-
-    .card {
-        max-height: calc(100dvh - 24px);
-    }
-
-    .logo {
-        width: 56px;
-        height: 56px;
-        margin-bottom: 12px;
-    }
-
-    .subtitle {
-        margin-bottom: 20px;
-    }
-
-}
-
-
-/* =====================================================
-   DESKTOP HOVER
-===================================================== */
-
-@media (hover: hover) {
-
-    .login-btn:hover,
-    .proceed-btn:hover {
-
-        transform: translateY(-2px);
-    }
-
-    .yes-btn:hover {
-
-        transform: translateY(-2px) scale(1.02);
+    .date-question {
+        font-size: 17px;
     }
 
 }
 
 </style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BACKGROUND DECORATION
+===================================================== -->
+
+<div class="background-heart heart1">♡</div>
+<div class="background-heart heart2">♡</div>
+<div class="background-heart heart3">♡</div>
+<div class="background-heart heart4">♡</div>
+
+
+<!-- =====================================================
+     MAIN CARD
+===================================================== -->
+
+<div class="card">
+
+
+    <!-- =================================================
+         LOGIN PAGE
+    ================================================== -->
+
+    <div id="loginPage">
+
+        <div class="logo">
+            ✦
+        </div>
+
+        <h1>Welcome</h1>
+
+        <p class="subtitle">
+            There's a little something waiting for you ✨
+        </p>
+
+
+        <!-- USERNAME -->
+
+        <div class="input-group">
+
+            <label>
+                Your name
+            </label>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter your name"
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <!-- PASSWORD -->
+
+        <div class="input-group">
+
+            <label>
+                Password
+            </label>
+
+            <div class="password-wrapper">
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                >
+
+                <button
+                    type="button"
+                    class="show-password"
+                    onclick="togglePassword()"
+                >
+                    ♡
+                </button>
+
+            </div>
+
+            <div id="hint" class="hint">
+                ✨ Hint: It's Prasad's birthdate.
+            </div>
+
+        </div>
+
+
+        <button
+            class="login-btn"
+            onclick="login()"
+        >
+            Continue ✨
+        </button>
+
+
+        <div
+            id="loginMessage"
+            class="message"
+        ></div>
+
+    </div>
+
+
+    <!-- =================================================
+         DATE INVITATION
+    ================================================== -->
+
+    <div id="datePage" class="date-page">
+
+        <div class="date-icon">
+            💌
+        </div>
+
+        <div class="date-title">
+            A Little Question...
+        </div>
+
+        <div class="date-question">
+            Would you like to go on a date with me? ♡
+        </div>
+
+
+        <div class="date-buttons">
+
+            <button
+                class="yes-btn"
+                onclick="sayYes()"
+            >
+                Yes 💕
+            </button>
+
+            <button
+                id="noButton"
+                class="no-btn"
+                onclick="sayNo()"
+            >
+                No 🙃
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         REASON PAGE
+    ================================================== -->
+
+    <div id="reasonPage" class="reason-page">
+
+        <div class="reason-icon">
+            🥺
+        </div>
+
+        <div class="reason-title">
+            Okay... tell me why?
+        </div>
+
+        <div class="reason-text">
+            If you're saying no, at least give me a reason.
+            <br>
+            I promise I'll read it properly. ♡
+        </div>
+
+
+        <textarea
+            id="reasonBox"
+            class="reason-box"
+            placeholder="Write your reason here..."
+        ></textarea>
+
+
+        <button
+            class="proceed-btn"
+            onclick="submitReason()"
+        >
+            Proceed
+        </button>
+
+    </div>
+
+
+    <!-- =================================================
+         WARNING PAGE
+    ================================================== -->
+
+    <div id="warningPage" class="warning-page">
+
+        <div class="warning-icon">
+            ⚠️
+        </div>
+
+        <div class="warning-title">
+            Wait a minute...
+        </div>
+
+        <div class="warning-message">
+            Your response has been received.
+            <br><br>
+
+            But unfortunately...
+            <br>
+
+            <strong>
+                "No" is currently under maintenance. 😂
+            </strong>
+
+            <br><br>
+
+            Please proceed with the date.
+            ♡
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         DATE DETAILS
+    ================================================== -->
+
+    <div id="detailsPage" class="details-page">
+
+        <div class="details-icon">
+            🌹
+        </div>
+
+        <div class="details-title">
+            It's a Date ♡
+        </div>
+
+
+        <div class="details-card">
+
+
+            <!-- VENUE -->
+
+            <div class="detail-row">
+
+                <div class="detail-emoji">
+                    📍
+                </div>
+
+                <div class="detail-content">
+
+                    <div class="detail-label">
+                        Venue
+                    </div>
+
+                    <div class="detail-value">
+                        Your Venue Here
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DATE -->
+
+            <div class="detail-row">
+
+                <div class="detail-emoji">
+                    📅
+                </div>
+
+                <div class="detail-content">
+
+                    <div class="detail-label">
+                        Date
+                    </div>
+
+                    <div class="detail-value">
+                        Your Date Here
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TIME -->
+
+            <div class="detail-row">
+
+                <div class="detail-emoji">
+                    🕐
+                </div>
+
+                <div class="detail-content">
+
+                    <div class="detail-label">
+                        Time
+                    </div>
+
+                    <div class="detail-value">
+                        Your Time Here
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DRESS CODE -->
+
+            <div class="detail-row">
+
+                <div class="detail-emoji">
+                    👗
+                </div>
+
+                <div class="detail-content">
+
+                    <div class="detail-label">
+                        Dress Code
+                    </div>
+
+                    <div class="detail-value">
+                        Something You Feel Pretty In ♡
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- COMPANION -->
+
+            <div class="detail-row">
+
+                <div class="detail-emoji">
+                    🫶
+                </div>
+
+                <div class="detail-content">
+
+                    <div class="detail-label">
+                        Company
+                    </div>
+
+                    <div class="detail-value">
+                        Me, obviously.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+        made with a little extra thought ♡
+    </div>
+
+
+</div>
+
+
+<script>
+
+
+/* =====================================================
+   SHOW PASSWORD
+===================================================== */
+
+function togglePassword() {
+
+    const password =
+        document.getElementById("password");
+
+    const button =
+        document.querySelector(".show-password");
+
+
+    if (password.type === "password") {
+
+        password.type = "text";
+
+        button.textContent = "♥";
+
+    } else {
+
+        password.type = "password";
+
+        button.textContent = "♡";
+
+    }
+
+}
+
+
+/* =====================================================
+   SHOW LOGIN HINT
+===================================================== */
+
+const username =
+    document.getElementById("username");
+
+const hint =
+    document.getElementById("hint");
+
+
+username.addEventListener("input", function() {
+
+    if (username.value.trim() !== "") {
+
+        hint.classList.add("show");
+
+    } else {
+
+        hint.classList.remove("show");
+
+    }
+
+});
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+function login() {
+
+    const usernameValue =
+        document.getElementById("username")
+        .value
+        .trim();
+
+    const passwordValue =
+        document.getElementById("password")
+        .value
+        .trim();
+
+    const message =
+        document.getElementById("loginMessage");
+
+
+    if (usernameValue === "") {
+
+        message.textContent =
+            "Please enter your name.";
+
+        message.className =
+            "message error";
+
+        return;
+
+    }
+
+
+    if (passwordValue === "") {
+
+        message.textContent =
+            "Please enter your password.";
+
+        message.className =
+            "message error";
+
+        return;
+
+    }
+
+
+    if (passwordValue.toLowerCase() === "14 march") {
+
+        /* Hide login */
+
+        document.getElementById("loginPage")
+            .style.display = "none";
+
+
+        /* Show date question */
+
+        document.getElementById("datePage")
+            .classList.add("active");
+
+    } else {
+
+        message.textContent =
+            "That's not quite right ♡";
+
+        message.className =
+            "message error";
+
+    }
+
+}
+
+
+/* =====================================================
+   NO BUTTON
+===================================================== */
+
+let noAttempts = 0;
+
+const noButton =
+    document.getElementById("noButton");
+
+
+function sayNo() {
+
+    /*
+       After 4 attempts the button finally
+       allows the user to continue.
+    */
+
+    if (noAttempts >= 4) {
+
+        document.getElementById("datePage")
+            .classList.remove("active");
+
+        document.getElementById("reasonPage")
+            .classList.add("active");
+
+        return;
+
+    }
+
+
+    noAttempts++;
+
+    moveNoButton();
+
+}
+
+
+/* =====================================================
+   MOVE NO BUTTON
+===================================================== */
+
+function moveNoButton() {
+
+    const container =
+        document.querySelector(".date-buttons");
+
+    const containerWidth =
+        container.offsetWidth;
+
+    const buttonWidth =
+        noButton.offsetWidth;
+
+
+    const maxMove =
+        Math.max(20, containerWidth - buttonWidth);
+
+
+    const randomX =
+        Math.random() * maxMove - maxMove / 2;
+
+
+    const randomY =
+        Math.random() * 100 - 50;
+
+
+    noButton.style.transform =
+        `translate(${randomX}px, ${randomY}px)`;
+
+}
+
+
+/* =====================================================
+   YES BUTTON
+===================================================== */
+
+function sayYes() {
+
+    document.getElementById("datePage")
+        .classList.remove("active");
+
+    document.getElementById("detailsPage")
+        .classList.add("active");
+
+}
+
+
+/* =====================================================
+   SUBMIT REASON
+===================================================== */
+
+function submitReason() {
+
+    const reason =
+        document.getElementById("reasonBox")
+        .value
+        .trim();
+
+
+    if (reason === "") {
+
+        alert(
+            "You have to give me a reason first 😭"
+        );
+
+        return;
+
+    }
+
+
+    /* Show warning */
+
+    document.getElementById("reasonPage")
+        .classList.remove("active");
+
+    document.getElementById("warningPage")
+        .classList.add("active");
+
+
+    /*
+       After 3 seconds show the date details.
+    */
+
+    setTimeout(function() {
+
+        document.getElementById("warningPage")
+            .classList.remove("active");
+
+        document.getElementById("detailsPage")
+            .classList.add("active");
+
+    }, 3500);
+
+}
+
+</script>
+
+</body>
+</html>
