@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>A Little Something ♡</title>
-
 <style>
 
 * {
@@ -15,30 +7,30 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-html,
-body {
+html {
     width: 100%;
-    min-height: 100%;
 }
 
 body {
+    width: 100%;
     min-height: 100vh;
     min-height: 100dvh;
 
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
-    padding: 16px;
+    /* MORE SPACE AROUND THE CARD */
+    padding: 22px 16px;
 
     font-family: "Segoe UI", Arial, sans-serif;
 
     color: #4b3543;
 
     background:
-        radial-gradient(circle at 5% 5%, #ffdbe9 0%, transparent 32%),
-        radial-gradient(circle at 95% 10%, #e6dcff 0%, transparent 32%),
-        radial-gradient(circle at 50% 100%, #ffeadc 0%, transparent 38%),
+        radial-gradient(circle at 5% 5%, #ffdbe9 0%, transparent 30%),
+        radial-gradient(circle at 95% 10%, #e6dcff 0%, transparent 30%),
+        radial-gradient(circle at 50% 100%, #ffeadc 0%, transparent 35%),
         #fff9fc;
 
     overflow-x: hidden;
@@ -51,42 +43,37 @@ body {
 
 .background-heart {
     position: fixed;
-
-    color: rgba(226, 117, 157, 0.11);
-
+    color: rgba(226, 117, 157, 0.10);
     pointer-events: none;
-
     user-select: none;
-
     z-index: 0;
-
     animation: floatHeart 7s ease-in-out infinite;
 }
 
 .heart1 {
     top: 8%;
     left: 5%;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .heart2 {
     bottom: 12%;
     left: 4%;
-    font-size: 22px;
+    font-size: 19px;
     animation-delay: 2s;
 }
 
 .heart3 {
     top: 12%;
     right: 5%;
-    font-size: 25px;
+    font-size: 21px;
     animation-delay: 1s;
 }
 
 .heart4 {
     bottom: 8%;
     right: 5%;
-    font-size: 32px;
+    font-size: 27px;
     animation-delay: 3s;
 }
 
@@ -97,41 +84,42 @@ body {
     }
 
     50% {
-        transform: translateY(-10px) rotate(6deg);
+        transform: translateY(-8px) rotate(5deg);
     }
 }
 
 
 /* =====================================================
-   MAIN CARD
+   CARD
 ===================================================== */
 
 .card {
 
-    width: min(100%, 430px);
+    /* INTENTIONALLY SMALLER */
+    width: min(92%, 390px);
 
-    max-height: calc(100dvh - 32px);
+    max-height: calc(100dvh - 44px);
 
     overflow-y: auto;
     overflow-x: hidden;
 
-    padding: 34px 28px;
+    /* SMALLER INTERNAL SPACING */
+    padding: 27px 23px;
 
-    background: rgba(255, 255, 255, 0.82);
+    background: rgba(255, 255, 255, 0.80);
 
-    border: 1px solid rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255,255,255,0.9);
 
-    border-radius: 28px;
+    border-radius: 25px;
 
     box-shadow:
-        0 20px 55px rgba(170, 110, 140, 0.16),
-        0 5px 20px rgba(170, 110, 140, 0.07);
+        0 18px 48px rgba(170,110,140,0.14),
+        0 5px 16px rgba(170,110,140,0.06);
 
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 
     position: relative;
-
     z-index: 2;
 
     scrollbar-width: none;
@@ -147,7 +135,7 @@ body {
 
     from {
         opacity: 0;
-        transform: translateY(15px);
+        transform: translateY(12px);
     }
 
     to {
@@ -163,14 +151,14 @@ body {
 
 .logo {
 
-    width: 62px;
-    height: 62px;
+    width: 55px;
+    height: 55px;
 
-    margin: 0 auto 17px;
+    margin: 0 auto 14px;
 
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
     border-radius: 50%;
 
@@ -183,10 +171,10 @@ body {
 
     color: white;
 
-    font-size: 25px;
+    font-size: 22px;
 
     box-shadow:
-        0 9px 22px rgba(210, 130, 165, 0.22);
+        0 8px 18px rgba(210,130,165,0.20);
 }
 
 h1 {
@@ -195,13 +183,14 @@ h1 {
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 28px;
+    /* SMALLER */
+    font-size: 25px;
 
     font-weight: 500;
 
     color: #543b49;
 
-    margin-bottom: 7px;
+    margin-bottom: 6px;
 }
 
 .subtitle {
@@ -210,11 +199,12 @@ h1 {
 
     color: #9b7d8c;
 
-    font-size: 13px;
+    /* SMALLER */
+    font-size: 12px;
 
-    line-height: 1.5;
+    line-height: 1.45;
 
-    margin-bottom: 25px;
+    margin-bottom: 21px;
 }
 
 
@@ -223,16 +213,16 @@ h1 {
 ===================================================== */
 
 .input-group {
-    margin-bottom: 17px;
+    margin-bottom: 14px;
 }
 
 label {
 
     display: block;
 
-    margin-bottom: 7px;
+    margin-bottom: 6px;
 
-    font-size: 12px;
+    font-size: 11px;
 
     font-weight: 600;
 
@@ -243,19 +233,21 @@ input {
 
     width: 100%;
 
-    min-height: 48px;
+    /* SMALLER */
+    min-height: 44px;
 
-    padding: 12px 14px;
+    padding: 10px 13px;
 
-    border-radius: 13px;
+    border-radius: 12px;
 
     border: 1px solid #efd9e3;
 
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255,255,255,0.8);
 
     color: #4b3543;
 
-    font-size: 15px;
+    /* SMALLER */
+    font-size: 14px;
 
     outline: none;
 }
@@ -271,7 +263,7 @@ input:focus {
     background: white;
 
     box-shadow:
-        0 0 0 3px rgba(231, 157, 188, 0.12);
+        0 0 0 3px rgba(231,157,188,0.11);
 }
 
 
@@ -284,24 +276,24 @@ input:focus {
 }
 
 .password-wrapper input {
-    padding-right: 48px;
+    padding-right: 45px;
 }
 
 .show-password {
 
     position: absolute;
 
-    right: 5px;
+    right: 4px;
     top: 50%;
 
     transform: translateY(-50%);
 
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     border: none;
 
@@ -309,18 +301,16 @@ input:focus {
 
     color: #b38d9e;
 
-    font-size: 16px;
-
-    cursor: pointer;
+    font-size: 15px;
 }
 
 .hint {
 
     display: none;
 
-    margin-top: 7px;
+    margin-top: 6px;
 
-    font-size: 11px;
+    font-size: 10px;
 
     color: #b06d8e;
 }
@@ -344,13 +334,14 @@ button {
 
     width: 100%;
 
-    min-height: 48px;
+    /* SMALLER */
+    min-height: 44px;
 
-    padding: 12px 16px;
+    padding: 10px 15px;
 
     border: none;
 
-    border-radius: 13px;
+    border-radius: 12px;
 
     background:
         linear-gradient(
@@ -361,23 +352,19 @@ button {
 
     color: white;
 
-    font-size: 14px;
+    /* SMALLER */
+    font-size: 13px;
 
     font-weight: 600;
 
     cursor: pointer;
 
     box-shadow:
-        0 8px 20px rgba(204, 132, 166, 0.22);
+        0 7px 17px rgba(204,132,166,0.20);
 }
 
 .login-btn {
-    margin-top: 5px;
-}
-
-.login-btn:active,
-.proceed-btn:active {
-    transform: scale(0.98);
+    margin-top: 3px;
 }
 
 
@@ -387,21 +374,17 @@ button {
 
 .message {
 
-    min-height: 18px;
+    min-height: 16px;
 
-    margin-top: 12px;
+    margin-top: 10px;
 
     text-align: center;
 
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .error {
     color: #d66b83;
-}
-
-.success {
-    color: #69a98c;
 }
 
 
@@ -427,21 +410,22 @@ button {
 
     text-align: center;
 
-    font-size: 48px;
+    /* SMALLER */
+    font-size: 42px;
 
-    margin-bottom: 10px;
+    margin-bottom: 7px;
 
     animation: heartbeat 1.5s infinite;
 }
 
 @keyframes heartbeat {
 
-    0%, 100% {
+    0%,100% {
         transform: scale(1);
     }
 
     50% {
-        transform: scale(1.08);
+        transform: scale(1.07);
     }
 }
 
@@ -451,26 +435,28 @@ button {
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 28px;
+    /* SMALLER */
+    font-size: 25px;
 
     font-weight: 500;
 
     color: #543b49;
 
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .date-question {
 
     text-align: center;
 
-    font-size: 16px;
+    /* SMALLER */
+    font-size: 14px;
 
-    line-height: 1.5;
+    line-height: 1.45;
 
     color: #704f60;
 
-    margin-bottom: 23px;
+    margin-bottom: 19px;
 }
 
 
@@ -482,7 +468,7 @@ button {
 
     width: 100%;
 
-    height: 60px;
+    height: 53px;
 
     position: relative;
 
@@ -492,7 +478,7 @@ button {
 
     justify-content: center;
 
-    gap: 12px;
+    gap: 10px;
 
     overflow: hidden;
 }
@@ -500,13 +486,14 @@ button {
 .yes-btn,
 .no-btn {
 
-    min-height: 46px;
+    min-height: 42px;
 
-    padding: 11px 22px;
+    padding: 9px 19px;
 
     border-radius: 50px;
 
-    font-size: 14px;
+    /* SMALLER */
+    font-size: 13px;
 
     white-space: nowrap;
 }
@@ -525,14 +512,14 @@ button {
     color: white;
 
     box-shadow:
-        0 7px 18px rgba(210, 120, 160, 0.22);
+        0 6px 15px rgba(210,120,160,0.20);
 }
 
 .no-btn {
 
     position: absolute;
 
-    left: calc(50% + 6px);
+    left: calc(50% + 5px);
 
     background: white;
 
@@ -554,9 +541,9 @@ button {
 
     text-align: center;
 
-    font-size: 43px;
+    font-size: 38px;
 
-    margin-bottom: 10px;
+    margin-bottom: 7px;
 }
 
 .reason-title {
@@ -565,11 +552,11 @@ button {
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 26px;
+    font-size: 23px;
 
     color: #543b49;
 
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 }
 
 .reason-text {
@@ -578,24 +565,24 @@ button {
 
     color: #9b7d8c;
 
-    font-size: 13px;
+    font-size: 11px;
 
     line-height: 1.5;
 
-    margin-bottom: 18px;
+    margin-bottom: 14px;
 }
 
 .reason-box {
 
     width: 100%;
 
-    min-height: 115px;
+    min-height: 100px;
 
-    padding: 13px;
+    padding: 11px;
 
     resize: vertical;
 
-    border-radius: 13px;
+    border-radius: 12px;
 
     border: 1px solid #efd9e3;
 
@@ -605,21 +592,13 @@ button {
 
     font-family: inherit;
 
-    font-size: 15px;
+    font-size: 14px;
 
     outline: none;
 }
 
-.reason-box:focus {
-
-    border-color: #e3a1bc;
-
-    box-shadow:
-        0 0 0 3px rgba(231,157,188,0.12);
-}
-
 .proceed-btn {
-    margin-top: 12px;
+    margin-top: 10px;
 }
 
 
@@ -631,9 +610,9 @@ button {
 
     text-align: center;
 
-    font-size: 48px;
+    font-size: 43px;
 
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .warning-title {
@@ -642,36 +621,36 @@ button {
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 28px;
+    font-size: 25px;
 
     color: #543b49;
 
-    margin-bottom: 13px;
+    margin-bottom: 11px;
 }
 
 .warning-message {
 
     text-align: center;
 
-    font-size: 15px;
+    font-size: 13px;
 
-    line-height: 1.6;
+    line-height: 1.55;
 
     color: #704f60;
 }
 
 
 /* =====================================================
-   DATE DETAILS
+   DETAILS
 ===================================================== */
 
 .details-icon {
 
     text-align: center;
 
-    font-size: 48px;
+    font-size: 43px;
 
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .details-title {
@@ -680,11 +659,11 @@ button {
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 28px;
+    font-size: 25px;
 
     color: #543b49;
 
-    margin-bottom: 17px;
+    margin-bottom: 14px;
 }
 
 .details-card {
@@ -693,9 +672,9 @@ button {
 
     border: 1px solid #f0dce5;
 
-    border-radius: 16px;
+    border-radius: 14px;
 
-    padding: 5px 15px;
+    padding: 4px 13px;
 }
 
 .detail-row {
@@ -704,9 +683,9 @@ button {
 
     align-items: center;
 
-    gap: 11px;
+    gap: 9px;
 
-    padding: 12px 0;
+    padding: 10px 0;
 
     border-bottom: 1px solid #f3e5eb;
 }
@@ -717,13 +696,13 @@ button {
 
 .detail-emoji {
 
-    width: 26px;
+    width: 23px;
 
     flex-shrink: 0;
 
     text-align: center;
 
-    font-size: 19px;
+    font-size: 17px;
 }
 
 .detail-content {
@@ -733,11 +712,11 @@ button {
 
 .detail-label {
 
-    font-size: 9px;
+    font-size: 8px;
 
     text-transform: uppercase;
 
-    letter-spacing: 0.9px;
+    letter-spacing: 0.8px;
 
     color: #b08b9d;
 
@@ -746,9 +725,9 @@ button {
 
 .detail-value {
 
-    font-size: 13px;
+    font-size: 12px;
 
-    line-height: 1.35;
+    line-height: 1.3;
 
     font-weight: 600;
 
@@ -764,749 +743,69 @@ button {
 
 .footer {
 
-    margin-top: 20px;
+    margin-top: 16px;
 
     text-align: center;
 
     color: #c19eae;
 
-    font-size: 9px;
+    font-size: 8px;
 
-    letter-spacing: 0.4px;
+    letter-spacing: 0.3px;
 }
 
 
 /* =====================================================
-   PHONE OPTIMIZATION
-===================================================== */
-
-@media (max-width: 480px) {
-
-    body {
-        padding: 12px;
-    }
-
-    .card {
-
-        width: 100%;
-
-        padding: 30px 22px;
-
-        border-radius: 24px;
-
-        max-height: calc(100dvh - 24px);
-    }
-
-    .background-heart {
-        opacity: 0.65;
-    }
-}
-
-
-/* =====================================================
-   VERY SMALL PHONES
+   EXTRA SMALL PHONES
 ===================================================== */
 
 @media (max-width: 360px) {
 
     body {
-        padding: 9px;
+        padding: 18px 12px;
     }
 
     .card {
 
-        padding: 26px 18px;
+        width: 94%;
+
+        padding: 24px 19px;
 
         border-radius: 22px;
     }
 
-    .logo {
-
-        width: 56px;
-        height: 56px;
-
-        font-size: 22px;
-
-        margin-bottom: 14px;
-    }
-
     h1 {
-        font-size: 25px;
-    }
-
-    .subtitle {
-        font-size: 12px;
-        margin-bottom: 21px;
+        font-size: 23px;
     }
 
     .date-title {
-        font-size: 25px;
+        font-size: 23px;
     }
 
     .date-question {
-        font-size: 15px;
-    }
-
-    .yes-btn,
-    .no-btn {
-
-        padding-left: 18px;
-        padding-right: 18px;
-
         font-size: 13px;
     }
+
 }
 
 
 /* =====================================================
-   SHORT PHONE SCREENS
+   SHORT PHONES
 ===================================================== */
 
 @media (max-height: 650px) {
 
     body {
         align-items: flex-start;
-        padding-top: 8px;
-        padding-bottom: 8px;
+
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
     .card {
-        max-height: calc(100dvh - 16px);
+        max-height: calc(100dvh - 20px);
     }
 
-    .logo {
-        width: 52px;
-        height: 52px;
-        margin-bottom: 11px;
-    }
-
-    .subtitle {
-        margin-bottom: 18px;
-    }
-}
-
-
-/* =====================================================
-   DESKTOP
-===================================================== */
-
-@media (min-width: 481px) {
-
-    .login-btn:hover,
-    .proceed-btn:hover {
-
-        transform: translateY(-2px);
-    }
-
-    .yes-btn:hover {
-
-        transform: translateY(-2px) scale(1.02);
-    }
 }
 
 </style>
-</head>
-
-
-<body>
-
-
-<div class="background-heart heart1">♡</div>
-<div class="background-heart heart2">♡</div>
-<div class="background-heart heart3">♡</div>
-<div class="background-heart heart4">♡</div>
-
-
-<div class="card">
-
-
-<!-- =====================================================
-     LOGIN
-===================================================== -->
-
-<div id="loginPage">
-
-    <div class="logo">
-        ✦
-    </div>
-
-    <h1>Welcome</h1>
-
-    <p class="subtitle">
-        There's a little something waiting for you ✨
-    </p>
-
-
-    <div class="input-group">
-
-        <label for="username">
-            Your name
-        </label>
-
-        <input
-            type="text"
-            id="username"
-            placeholder="Enter your name"
-            autocomplete="off"
-        >
-
-    </div>
-
-
-    <div class="input-group">
-
-        <label for="password">
-            Password
-        </label>
-
-        <div class="password-wrapper">
-
-            <input
-                type="password"
-                id="password"
-                placeholder="Enter your password"
-            >
-
-            <button
-                type="button"
-                class="show-password"
-                onclick="togglePassword()"
-            >
-                ♡
-            </button>
-
-        </div>
-
-        <div id="hint" class="hint">
-            ✨ Hint: It's Prasad's birthdate.
-        </div>
-
-    </div>
-
-
-    <button
-        class="login-btn"
-        onclick="login()"
-    >
-        Continue ✨
-    </button>
-
-
-    <div
-        id="loginMessage"
-        class="message"
-    ></div>
-
-</div>
-
-
-<!-- =====================================================
-     DATE QUESTION
-===================================================== -->
-
-<div id="datePage" class="date-page">
-
-    <div class="date-icon">
-        💌
-    </div>
-
-    <div class="date-title">
-        A Little Question...
-    </div>
-
-    <div class="date-question">
-        Would you like to go on a date with me? ♡
-    </div>
-
-
-    <div class="date-buttons">
-
-        <button
-            class="yes-btn"
-            onclick="sayYes()"
-        >
-            Yes 💕
-        </button>
-
-        <button
-            id="noButton"
-            class="no-btn"
-            onclick="sayNo()"
-        >
-            No 🙃
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     REASON
-===================================================== -->
-
-<div id="reasonPage" class="reason-page">
-
-    <div class="reason-icon">
-        🥺
-    </div>
-
-    <div class="reason-title">
-        Okay... tell me why?
-    </div>
-
-    <div class="reason-text">
-        If you're saying no, at least give me a reason.
-        <br>
-        I promise I'll read it properly. ♡
-    </div>
-
-
-    <textarea
-        id="reasonBox"
-        class="reason-box"
-        placeholder="Write your reason here..."
-    ></textarea>
-
-
-    <button
-        class="proceed-btn"
-        onclick="submitReason()"
-    >
-        Proceed
-    </button>
-
-</div>
-
-
-<!-- =====================================================
-     WARNING
-===================================================== -->
-
-<div id="warningPage" class="warning-page">
-
-    <div class="warning-icon">
-        ⚠️
-    </div>
-
-    <div class="warning-title">
-        Wait a minute...
-    </div>
-
-    <div class="warning-message">
-
-        Your response has been received.
-
-        <br><br>
-
-        But unfortunately...
-
-        <br>
-
-        <strong>
-            "No" is currently under maintenance. 😂
-        </strong>
-
-        <br><br>
-
-        Please proceed with the date. ♡
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     DATE DETAILS
-===================================================== -->
-
-<div id="detailsPage" class="details-page">
-
-    <div class="details-icon">
-        🌹
-    </div>
-
-    <div class="details-title">
-        It's a Date ♡
-    </div>
-
-
-    <div class="details-card">
-
-
-        <div class="detail-row">
-
-            <div class="detail-emoji">
-                📍
-            </div>
-
-            <div class="detail-content">
-
-                <div class="detail-label">
-                    Venue
-                </div>
-
-                <div class="detail-value">
-                    Your Venue Here
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="detail-row">
-
-            <div class="detail-emoji">
-                📅
-            </div>
-
-            <div class="detail-content">
-
-                <div class="detail-label">
-                    Date
-                </div>
-
-                <div class="detail-value">
-                    Your Date Here
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="detail-row">
-
-            <div class="detail-emoji">
-                🕐
-            </div>
-
-            <div class="detail-content">
-
-                <div class="detail-label">
-                    Time
-                </div>
-
-                <div class="detail-value">
-                    Your Time Here
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="detail-row">
-
-            <div class="detail-emoji">
-                👗
-            </div>
-
-            <div class="detail-content">
-
-                <div class="detail-label">
-                    Dress Code
-                </div>
-
-                <div class="detail-value">
-                    Something You Feel Pretty In ♡
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="detail-row">
-
-            <div class="detail-emoji">
-                🫶
-            </div>
-
-            <div class="detail-content">
-
-                <div class="detail-label">
-                    Company
-                </div>
-
-                <div class="detail-value">
-                    Me, obviously.
-                </div>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</div>
-
-
-<div class="footer">
-    made with a little extra thought ♡
-</div>
-
-
-</div>
-
-
-<script>
-
-/* =====================================================
-   PASSWORD
-===================================================== */
-
-function togglePassword() {
-
-    const password =
-        document.getElementById("password");
-
-    const button =
-        document.querySelector(".show-password");
-
-
-    if (password.type === "password") {
-
-        password.type = "text";
-
-        button.textContent = "♥";
-
-    } else {
-
-        password.type = "password";
-
-        button.textContent = "♡";
-
-    }
-}
-
-
-/* =====================================================
-   HINT
-===================================================== */
-
-const usernameInput =
-    document.getElementById("username");
-
-const hint =
-    document.getElementById("hint");
-
-
-usernameInput.addEventListener("input", function() {
-
-    if (usernameInput.value.trim() !== "") {
-
-        hint.classList.add("show");
-
-    } else {
-
-        hint.classList.remove("show");
-
-    }
-
-});
-
-
-/* =====================================================
-   LOGIN
-===================================================== */
-
-function login() {
-
-    const username =
-        document.getElementById("username")
-        .value
-        .trim();
-
-    const password =
-        document.getElementById("password")
-        .value
-        .trim();
-
-    const message =
-        document.getElementById("loginMessage");
-
-
-    if (username === "") {
-
-        message.textContent =
-            "Please enter your name.";
-
-        message.className =
-            "message error";
-
-        return;
-    }
-
-
-    if (password === "") {
-
-        message.textContent =
-            "Please enter your password.";
-
-        message.className =
-            "message error";
-
-        return;
-    }
-
-
-    if (password.toLowerCase() === "14 march") {
-
-        document.getElementById("loginPage")
-            .style.display = "none";
-
-        document.getElementById("datePage")
-            .classList.add("active");
-
-    } else {
-
-        message.textContent =
-            "That's not quite right ♡";
-
-        message.className =
-            "message error";
-
-    }
-
-}
-
-
-/* =====================================================
-   NO BUTTON
-===================================================== */
-
-let noAttempts = 0;
-
-const noButton =
-    document.getElementById("noButton");
-
-
-function sayNo() {
-
-    if (noAttempts >= 4) {
-
-        document.getElementById("datePage")
-            .classList.remove("active");
-
-        document.getElementById("reasonPage")
-            .classList.add("active");
-
-        return;
-    }
-
-
-    noAttempts++;
-
-    moveNoButton();
-
-}
-
-
-/* =====================================================
-   MOVE NO BUTTON
-===================================================== */
-
-function moveNoButton() {
-
-    const area =
-        document.querySelector(".date-buttons");
-
-    const areaWidth =
-        area.clientWidth;
-
-    const areaHeight =
-        area.clientHeight;
-
-    const buttonWidth =
-        noButton.offsetWidth;
-
-    const buttonHeight =
-        noButton.offsetHeight;
-
-
-    const maxX =
-        Math.max(0, areaWidth - buttonWidth);
-
-    const maxY =
-        Math.max(0, areaHeight - buttonHeight);
-
-
-    const randomX =
-        Math.random() * maxX;
-
-    const randomY =
-        Math.random() * maxY;
-
-
-    noButton.style.left =
-        randomX + "px";
-
-    noButton.style.top =
-        randomY + "px";
-
-}
-
-
-/* =====================================================
-   YES
-===================================================== */
-
-function sayYes() {
-
-    document.getElementById("datePage")
-        .classList.remove("active");
-
-    document.getElementById("detailsPage")
-        .classList.add("active");
-
-}
-
-
-/* =====================================================
-   REASON
-===================================================== */
-
-function submitReason() {
-
-    const reason =
-        document.getElementById("reasonBox")
-        .value
-        .trim();
-
-
-    if (reason === "") {
-
-        alert(
-            "You have to give me a reason first 😭"
-        );
-
-        return;
-    }
-
-
-    document.getElementById("reasonPage")
-        .classList.remove("active");
-
-    document.getElementById("warningPage")
-        .classList.add("active");
-
-
-    setTimeout(function() {
-
-        document.getElementById("warningPage")
-            .classList.remove("active");
-
-        document.getElementById("detailsPage")
-            .classList.add("active");
-
-    }, 3500);
-
-}
-
-</script>
-
-</body>
-</html>
